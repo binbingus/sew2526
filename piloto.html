@@ -16,7 +16,7 @@
     <!-- HTML2: Ejercicio 7: elemento header: elementos comunes a todos los documentos -->
     <header>
         <!-- HTML2 : ejercicio 8: h1 es un enlace a la página principal -->
-        <h1><a href="index.html" target="_blank">MotoGP Desktop</a></h1>
+        <h1><a href="index.html">MotoGP Desktop</a></h1>
 
         <nav>
             <a href="index.html" title="Página de inicio">Inicio</a>
@@ -30,7 +30,7 @@
     </header>
 
     <!-- HTML2: ejercicio 8: migas -->
-    <p>Estás en: <a href="index.html" target="_blank">Inicio</a> | Piloto</p>
+    <p>Estás en: <a href="index.html">Inicio</a> | Piloto</p>
     
     <!-- HTML2: ejercicio 7: elemento main: agrupa el contenido especifico de piloto.html -->
     <main>
@@ -40,6 +40,14 @@
             <h2>Raúl Fernández</h2>
             <p>Raúl Fernández, nacido en Madrid, comenzó a competir con 11 años y fue creciendo desde la Cuna de Campeones hasta conquistar en 2018 
                 el Mundial Junior de Moto3™ del FIM CEV Repsol.</p>
+            <!-- HTML2: Ejercicio 1: Foto del piloto -->
+            <!-- HTML2: Ejercicio 2: Foto del piloto adptable con picture -->
+            <picture>
+                <source media="(max-width:799px)" srcset="multimedia/img/piloto-tablet.jpg" />  
+                <source media="(max-width:465px)" srcset="multimedia/img/piloto-movil.jpg" />  
+                <source media="(min-width:800px)" srcset="multimedia/img/piloto.jpg" /> 
+                <img src="multimedia/img/piloto.jpg" alt="Fotografía de Raúl Fernández"/>  
+            </picture>
         </section>
 
         <!-- HTML2: ejercicio 7: elemento section: agrupar semánticamente contenidos relacionados con el resto de la página -->
@@ -54,18 +62,6 @@
                 <li>MOTO: Aprilia </li>
                 <li>DORSAL: 25</li>
             </ul>
-        </section>
-
-        <!-- HTML2: ejercicio 7: elemento section: agrupar semánticamente contenidos relacionados con el resto de la página -->
-        <section>
-            <!-- HTML2: Ejercicio 1: Foto del piloto -->
-            <!-- HTML2: Ejercicio 2: Foto del piloto adptable con picture -->
-            <picture>
-                <source media="(max-width:799px)" srcset="multimedia/img/piloto-tablet.jpg" />  
-                <source media="(max-width:465px)" srcset="multimedia/img/piloto-movil.jpg" />  
-                <source media="(min-width:800px)" srcset="multimedia/img/piloto.jpg" /> 
-                <img src="multimedia/img/piloto.jpg" alt="Fotografía de Raúl Fernández"/>  
-            </picture>
         </section>
     
         <!-- HTML2: ejercicio 7: elemento section: agrupar semánticamente contenidos relacionados con el resto de la página -->
@@ -185,6 +181,7 @@
 
         <!-- HTML2: ejercicio 7: elemento section: agrupar semánticamente contenidos relacionados con el resto de la página -->
         <section>
+            <h3>Vídeo sobre Raúl Fernández</h3>
             <!-- HTML2: Ejercicio 4: vídeo en 2 formatos -->
             <video controls preload="auto">
                 <source src="multimedia/video/raulfernandez.mp4" type="video/mp4"/>
@@ -194,6 +191,7 @@
 
         <!-- HTML2: ejercicio 7: elemento section: agrupar semánticamente contenidos relacionados con el resto de la página -->
         <section>
+            <h3>Audio sobre MotoGP</h3>
             <!-- HTML2: Ejercicio 5: audio en 2 formatos -->
             <audio controls>
                 <source src="multimedia/audio/audio.mp3" type="audio/mpeg"/>
