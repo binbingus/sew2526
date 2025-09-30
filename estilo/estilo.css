@@ -2,7 +2,7 @@
 /* Estilos generales del proyecto MotoGP-Desktop */
 
 /* GAMA CROMÁTICA
-    fondo:  rgb(218, 224, 233)          (gris claro)
+    fondo:  rgb(231, 231, 231)          (gris claro)
     otro:   rgb(4, 35, 75)              (azul marino)
     header: black
 
@@ -17,7 +17,7 @@
 /* E: 001 */
 body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    background-color: rgb(218, 224, 233);
+    background-color: rgb(231, 231, 231);
     color: black;
 }
 
