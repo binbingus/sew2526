@@ -9,6 +9,8 @@
     h1:     white
     nav:    white
     letra:  black
+
+    otro:   rgb(158, 0, 0)
 */
 
 /* HTML-CSS 2: ejercicio 9: establecer la fuente y su familia en el elemento body */
@@ -19,7 +21,14 @@ body {
     color: black;
 }
 
+/* E: 001 */
 header {
     background-color: black;
     color: white;
+}
+
+/* E:002 */
+header a {
+    color: white;
+    text-decoration: none;
 }
