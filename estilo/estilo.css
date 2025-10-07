@@ -33,9 +33,24 @@ header a {
     text-decoration: none;
 }
 
-/* HTML-CSS 3: elemento activo del nav */
+/* HTML-CSS 3: ej2: elemento activo del nav */
 /* E:012 */
 header a.active {
     color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+/* HTML-CSS 3: ej3: Migas -> Destacar el último término y tamaño de letra más pequeño */
+/* E:002 */
+header + p {
+    font-size: .7em;
+}
+
+header + p a {
+    color: black;
+}
+
+/* E:013 */
+header + p span:last-of-type {
     font-weight: bold;
 }
