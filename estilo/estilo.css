@@ -17,7 +17,7 @@
 /* E: 001 */
 body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(231, 229, 229);
     color: black;
 }
 
@@ -104,7 +104,7 @@ table th {
 /* LISTA DE DEFINICIÓN */
 /* E:002 */
 main dl {
-    background-color: white;
+    background-color: rgb(211, 211, 211);
     border-radius: 1em;
     padding: 1em 2em;
     margin-bottom: 2em;
@@ -114,4 +114,15 @@ main dl {
 main dt {
     text-transform: uppercase;
     font-weight: bold;
+}
+
+/* E:002 */
+main dd {
+    text-align: justify;
+}
+
+/* OTRO */
+/* E:002 */
+main p {
+    text-align: justify;
 }
