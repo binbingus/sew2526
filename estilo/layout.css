@@ -34,9 +34,14 @@ header nav {
 }
 
 /* E:002 */
-header + p {
-    padding-left: 1.5em;
+p {
+    padding-left: calc(100vmax/90);
 }
+
+h2, h3, h4, h5, h6 {
+    padding-left: calc(100vmax/90);
+}
+    
 
 /* E:001 */
 img, video, audio {
