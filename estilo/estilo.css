@@ -32,3 +32,10 @@ header a {
     color: white;
     text-decoration: none;
 }
+
+/* HTML-CSS 3: elemento activo del nav */
+/* E:012 */
+header a.active {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
