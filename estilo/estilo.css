@@ -40,12 +40,78 @@ header a.active {
     font-weight: bold;
 }
 
+/* E:002 */
+header nav {
+    font-size: 1.3em;
+}
+
 /* HTML-CSS 3: ej3: Migas -> Destacar el último término y tamaño de letra más pequeño */
 /* E:002 */
 header + p {
     font-size: .7em;
 }
 
+/* E:003 */
 header + p a {
     color: black;
+}
+
+/* HTML-CSS 3: ejercicios optativos */
+
+/* ENLACES EXTERNOS */
+/* E:002 */
+main a {
+    color: rgb(158, 0, 0);
+    text-decoration: none;
+} 
+
+/* E:012 */
+main a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+/* E:012 */
+main a:visited {
+    color: purple;
+}
+
+/* ENCABEZADOS */
+/* E:001 */
+h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+}
+
+/* TABLA */
+/* E:001 */
+table {
+    background-color: white;
+    border-radius: 1em;
+}
+
+/* E:002 */
+table caption {
+    font-weight: bold;
+    margin: .5em 0;
+}
+
+/* E:002 */
+table th {
+    color: rgb(158, 0, 0);
+    text-transform: uppercase;
+}
+
+/* LISTA DE DEFINICIÓN */
+/* E:002 */
+main dl {
+    background-color: white;
+    border-radius: 1em;
+    padding: 1em 2em;
+    margin-bottom: 2em;
+}
+
+/* E:002 */
+main dt {
+    text-transform: uppercase;
+    font-weight: bold;
 }

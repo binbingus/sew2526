@@ -1,0 +1,82 @@
+/* Olga Alonso Grela UO288066 */
+/* Layout del proyecto MotoGP-Desktop */
+
+/* E:001 */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* E:001 */
+main{
+    padding: 1em;
+    overflow-x: auto;
+}
+
+/* HTML-CSS 3: ej5: Aplicar Flexbox al header y nav */
+/* E:001 */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    gap: 1em;
+    
+}
+
+/* E:002 */
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: .4em;
+}
+
+/* E:001 */
+img, video, audio {
+    max-width: 100%;
+    height: auto;
+}
+
+/* E:001 */
+table {
+    width: 100%;
+}
+
+/* E:002 */
+table th, table td {
+    padding: .5em;
+    text-align: center;
+}
+
+/* E:002 */
+main dt {
+    padding-top: 1em;
+}
+
+/* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
+@media (min-width:320px) and (max-width:799px) {
+    /* E:001 */
+    header {
+        flex-direction: column;
+    }
+
+    /* E:002 */
+    header nav {
+        flex-direction: column;
+        padding-bottom: 1em;
+    }
+
+    /* E:002 */
+    header + p{
+        display: none;
+    }
+
+    /* E:001 */
+    Video, audio {
+        width: 100%;
+        height: auto;
+    }
+}
