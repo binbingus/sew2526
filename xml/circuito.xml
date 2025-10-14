@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="circuito.dtd" type="application/xml-dtd"?>
+<!DOCTYPE circuito SYSTEM "circuito.dtd">
+<circuito>
+    <nombre>Autódromo Internacional do Algarve</nombre>
+    <longitud unidad="m">3.684</longitud>
+    <anchura unidad="m">14</anchura>
+
+    <fechaCarrera>09-11-2025</fechaCarrera>
+    <horaInicio>14:00</horaInicio>
+    <numeroVueltas>25</numeroVueltas>
+    <localidad>Algarve</localidad>
+    <pais>Portugal</pais>
+    <patrocinador>Qatar Airways</patrocinador>
+
+    <referencias>
+        <referencia>https://autodromodoalgarve.com/</referencia>
+        <referencia>https://www.motogp.com/en/calendar/2025/event/portugal/632adf30-be24-4b42-8276-2bdb174f22d1?tab=overview</referencia>
+        <referencia>https://es.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_do_Algarve</referencia>
+    </referencias>
+
+    <fotos>
+        <foto></foto>
+    </fotos>
+
+    <videos>
+        <video></video>
+    </videos>
+
+    <puntoOrigen>
+        <longitud>37.227</longitud>
+        <latitud>-8.626</latitud>
+        <altitud>98</altitud>
+    </puntoOrigen>
+    <tramos>
+        <tramo unidad="m">
+            <distancia>-</distancia>
+            <longitud>-</longitud>
+            <latitud>-</latitud>
+            <altitud>-</altitud>
+            <sector>-</sector>
+        </tramo>
+
+    </tramos>
+
+    <vencedor>
+        <nombre>Por determinar</nombre>
+        <tiempo>00:00.000</tiempo>
+    </vencedor>
+
+    <clasificacionMundial>
+        <piloto posicion="1">Pendiente</piloto>
+        <piloto posicion="2">Pendiente</piloto>
+        <piloto posicion="3">Pendiente</piloto>
+    </clasificacionMundial>
+
+</circuito>
