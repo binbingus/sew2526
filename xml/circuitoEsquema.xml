@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<circuito xsi:schemaLocation= "http://www.uniovi.es circuito.xsd"
+          xmlns="http://www.uniovi.es"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <nombre>Autódromo Internacional do Algarve</nombre>
+
+    <longitudCircuito unidad="m">3.684</longitudCircuito>
+    <anchura unidad="m">14</anchura>
+
+    <fechaCarrera>2025-11-09</fechaCarrera>
+    <horaInicio>14:00:00</horaInicio>
+    <numeroVueltas>25</numeroVueltas>
+    <localidad>Algarve</localidad>
+    <pais>Portugal</pais>
+    <patrocinador>Qatar Airways</patrocinador>
+
+    <referencias>
+        <referencia>https://autodromodoalgarve.com/</referencia>
+        <referencia>https://www.motogp.com/en/calendar/2025/event/portugal/632adf30-be24-4b42-8276-2bdb174f22d1?tab=overview</referencia>
+        <referencia>https://es.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_do_Algarve</referencia>
+    </referencias>
+
+    <fotos>
+        <foto>"multimedia/img/circuito_sectores.webp"</foto>
+    </fotos>
+
+    <videos>
+        <video>"multimedia/video/circuito.mp4"</video>
+    </videos>
+
+    <puntoOrigen>
+        <longitud>-8.6309250</longitud>
+        <latitud>37.2323871</latitud>
+        <altitud>103.41</altitud>
+    </puntoOrigen>
+    <tramos>
+        <!-- 1 -->
+        <tramo unidad="m">
+            <distancia>352.84</distancia>
+            <longitud>-8.6320307</longitud>
+            <latitud>37.2354402</latitud>
+            <altitud>100.3553643</altitud>
+            <sector>1</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>20.21</distancia>
+            <longitud>-8.6320494</longitud>
+            <latitud>37.2356182</latitud>
+            <altitud>101.0045253</altitud>
+            <sector>1</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>15.59</distancia>
+            <longitud>-8.6319412</longitud>
+            <latitud>37.2357294</latitud>
+            <altitud>101.5746302</altitud>
+            <sector>1</sector>
+        </tramo>
+        <!-- 2 -->
+        <tramo unidad="m">
+            <distancia>131.84</distancia>
+            <longitud>-8.6307393</longitud>
+            <latitud>37.2364294</latitud>
+            <altitud>103.6100883</altitud>
+            <sector>1</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>13.51</distancia>
+            <longitud>-8.6305944</longitud>
+            <latitud>37.2364803</latitud>
+            <altitud>103.6930394</altitud>
+            <sector>1</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>19.43</distancia>
+            <longitud>-8.6303780</longitud>
+            <latitud>37.2364848</latitud>
+            <altitud>103.9399954</altitud>
+            <sector>1</sector>
+        </tramo>
+        <!-- 3 -->
+        <tramo unidad="m">
+            <distancia>124.64</distancia>
+            <longitud>-8.6290171</longitud>
+            <latitud>37.2362111</latitud>
+            <altitud>105.4645908</altitud>
+            <sector>1</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>19.77</distancia>
+            <longitud>-8.6288551</longitud>
+            <latitud>37.2360864</latitud>
+            <altitud>105.6801841</altitud>
+            <sector>1</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>24</distancia>
+            <longitud>-8.6289713</longitud>
+            <latitud>37.2358895</latitud>
+            <altitud>105.1555418</altitud>
+            <sector>1</sector>
+        </tramo>
+        <!-- 4 -->
+        <tramo unidad="m">
+            <distancia>88.23</distancia>
+            <longitud>-8.6298074</longitud>
+            <latitud>37.2354853</latitud>
+            <altitud>115.3550100</altitud>
+            <sector>1</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>34.61</distancia>
+            <longitud>-8.6300566</longitud>
+            <latitud>37.2352268</latitud>
+            <altitud>109.5173723</altitud>
+            <sector>1</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>34.67</distancia>
+            <longitud>8.6300786</longitud>
+            <latitud>37.2349193</latitud>
+            <altitud>111.4454957</altitud>
+            <sector>1</sector>
+        </tramo>
+
+        <!-- 5 -->
+        <tramo unidad="m">
+            <distancia>520.02</distancia>
+            <longitud>-8.6305944</longitud>
+            <latitud>37.2304183</latitud>
+            <altitud>103.6930394</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>22.01</distancia>
+            <longitud>-8.6282571</longitud>
+            <latitud>37.2302930</latitud>
+            <altitud>104.5595649</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>22.43</distancia>
+            <longitud>-8.6280559</longitud>
+            <latitud>37.2304237</latitud>
+            <altitud>104.7902144</altitud>
+            <sector>2</sector>
+        </tramo>
+        <!-- 6 -->
+        <tramo unidad="m">
+            <distancia>174.8</distancia>
+            <longitud>-8.6278504</longitud>
+            <latitud>37.2319909</latitud>
+            <altitud>114.8394078</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>44.6</distancia>
+            <longitud>-8.6278587</longitud>
+            <latitud>37.2323899</latitud>
+            <altitud>117.2750759</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>46.06</distancia>
+            <longitud>-8.6280396</longitud>
+            <latitud>37.2327770</latitud>
+            <altitud>118.8010785</altitud>
+            <sector>2</sector>
+        </tramo>
+        <!-- 7 -->
+        <tramo unidad="m">
+            <distancia>149.79</distancia>
+            <longitud>-8.6288217</longitud>
+            <latitud>37.2339718</latitud>
+            <altitud>117.9939000</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>29.51</distancia>
+            <longitud>-8.6288872</longitud>
+            <latitud>37.2342320</latitud>
+            <altitud>117.8235894</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>30.75</distancia>
+            <longitud>-8.6305944</longitud>
+            <latitud>37.2344884</latitud>
+            <altitud>103.6930394</altitud>
+            <sector>1</sector>
+        </tramo>
+        <!-- 8 -->
+        <tramo unidad="m">
+            <distancia>92.39</distancia>
+            <longitud>-8.6280734</longitud>
+            <latitud>37.2351166</latitud>
+            <altitud>117.5183686</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>32</distancia>
+            <longitud>-8.6305944</longitud>
+            <latitud>37.2351749</latitud>
+            <altitud>103.6930394</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>32.09</distancia>
+            <longitud>-8.6275146</longitud>
+            <latitud>37.2349472</latitud>
+            <altitud>121.8144785</altitud>
+            <sector>2</sector>
+        </tramo>
+        <!-- 9 -->
+        <tramo unidad="m">
+            <distancia>287.48</distancia>
+            <longitud>-8.6270382</longitud>
+            <latitud>37.2323838</latitud>
+            <altitud>113.8095854</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>48</distancia>
+            <longitud>-8.6268462</longitud>
+            <latitud>37.2319807</latitud>
+            <altitud>114.7246975</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>47.12</distancia>
+            <longitud>-8.6264320</longitud>
+            <latitud>37.2317121</latitud>
+            <altitud>116.9729443</altitud>
+            <sector>2</sector>
+        </tramo>
+        <!-- 10 -->
+        <tramo unidad="m">
+            <distancia>143.05</distancia>
+            <longitud>-8.6250020</longitud>
+            <latitud>37.2311196</latitud>
+            <altitud>126.8271001</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>32.14</distancia>
+            <longitud>-8.6247046</longitud>
+            <latitud>37.6250020</latitud>
+            <altitud>126.9202382</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>27.66</distancia>
+            <longitud>-8.6245280</longitud>
+            <latitud>37.2307439</latitud>
+            <altitud>126.5340588</altitud>
+            <sector>2</sector>
+        </tramo>
+        <!-- 11 -->
+        <tramo unidad="m">
+            <distancia>35.43</distancia>
+            <longitud>-8.6243948</longitud>
+            <latitud>37.2304410</latitud>
+            <altitud>125.9558783</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>25.7</distancia>
+            <longitud>-8.6244257</longitud>
+            <latitud>37.2302104</latitud>
+            <altitud>125.8631805</altitud>
+            <sector>2</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>20.26</distancia>
+            <longitud>-8.6246070</longitud>
+            <latitud>37.2300977</latitud>
+            <altitud>125.5822550</altitud>
+            <sector>2</sector>
+        </tramo>
+        
+        <!-- 12 -->
+        <tramo unidad="m">
+            <distancia>152.05</distancia>
+            <longitud>-8.6262489</longitud>
+            <latitud>37.2296932</latitud>
+            <altitud>111.1888580</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>52.3</distancia>
+            <longitud>-8.2294023</longitud>
+            <latitud>37.2294023</latitud>
+            <altitud>112.4374298</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>47.56</distancia>
+            <longitud>-8.6269227</longitud>
+            <latitud>37.2290047</latitud>
+            <altitud>114.3679567</altitud>
+            <sector>3</sector>
+        </tramo>
+        <!-- 13 -->
+        <tramo unidad="m">
+            <distancia>127.96</distancia>
+            <longitud>-8.6271318</longitud>
+            <latitud>37.2278644</latitud>
+            <altitud>120.3321040</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>36.7</distancia>
+            <longitud>-8.6268915</longitud>
+            <latitud>37.2275975</latitud>
+            <altitud>121.9690433</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>32.16</distancia>
+            <longitud>-8.6265421</longitud>
+            <latitud>37.2276769</latitud>
+            <altitud>122.8684491</altitud>
+            <sector>3</sector>
+        </tramo>
+        <!-- 14 -->
+        <tramo unidad="m">
+            <distancia>143.23</distancia>
+            <longitud>-8.6255094</longitud>
+            <latitud>37.2286647</latitud>
+            <altitud>121.9525750</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>52.34</distancia>
+            <longitud>-8.6249289</longitud>
+            <latitud>37.2287312</latitud>
+            <altitud>119.5533111</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>59.39</distancia>
+            <longitud>-8.6245734</longitud>
+            <latitud>37.2282770</latitud>
+            <altitud>115.5885462</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>66.74</distancia>
+            <longitud>-8.6247741</longitud>
+            <latitud>37.2276943</latitud>
+            <altitud>112.4670985</altitud>
+            <sector>3</sector>
+        </tramo>
+        <!-- 15 -->
+        <tramo unidad="m">
+            <distancia>161.19</distancia>
+            <longitud>-8.6259238</longitud>
+            <latitud>37.2265710</latitud>
+            <altitud>112.2545581</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>84.25</distancia>
+            <longitud>-8.6267199</longitud>
+            <latitud>37.2261535</latitud>
+            <altitud>111.6460028</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>70.3</distancia>
+            <longitud>-8.6275123</longitud>
+            <latitud>37.2260919</latitud>
+            <altitud>105.2083640</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>73.8</distancia>
+            <longitud>-8.6282895</longitud>
+            <latitud>37.2263276</latitud>
+            <altitud>100.1360904</altitud>
+            <sector>3</sector>
+        </tramo>
+        <tramo unidad="m">
+            <distancia>97.44</distancia>
+            <longitud>-8.6289710</longitud>
+            <latitud>37.2270174</latitud>
+            <altitud>98.5857047</altitud>
+            <sector>3</sector>
+        </tramo>
+
+        <!-- final -->
+        <tramo unidad="m">
+            <distancia>620.73</distancia>
+            <longitud>-8.6309250</longitud>
+            <latitud>37.2323871</latitud>
+            <altitud>103.41</altitud>
+            <sector>1</sector>
+        </tramo>
+    </tramos>
+
+    <vencedor>
+        <piloto posicion="1">"-"</piloto>
+        <tiempo>PT00H00M00S</tiempo>
+    </vencedor>
+
+    <clasificacionMundial>
+        <piloto posicion="1">Pendiente</piloto>
+        <piloto posicion="2">Pendiente</piloto>
+        <piloto posicion="3">Pendiente</piloto>
+    </clasificacionMundial>
+
+</circuito>

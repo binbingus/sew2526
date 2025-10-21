@@ -28,14 +28,16 @@
 
     <!-- INFO CIRCUITO -->
 	<xs:element name="nombre" type="xs:string" />
-    
+
     <xs:simpleType name="tipoLongitudCircuito">
-        <xs:restriction base="xs:positiveInteger">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/> 
             <xs:maxInclusive value="10000"/> 
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="tipoAnchura">
-        <xs:restriction base="xs:positiveInteger">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>  
             <xs:maxInclusive value="100"/>  
         </xs:restriction>
     </xs:simpleType>
@@ -79,7 +81,8 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="piloto" />
-				<xs:element minOccurs="3" maxOccurs="3" ref="piloto" />
+                <xs:element ref="piloto" />
+                <xs:element ref="piloto" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -99,7 +102,8 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="referencia" />
-				<xs:element minOccurs="3" maxOccurs="3" ref="referencia" />
+                <xs:element ref="referencia" />
+                <xs:element ref="referencia" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -145,6 +149,7 @@
 	<xs:element name="tramo">
 		<xs:complexType>
 			<xs:sequence>
+                <xs:element ref="distancia"/>
 				<xs:element ref="longitud" />
 				<xs:element ref="latitud" />
 				<xs:element ref="altitud" />
@@ -153,7 +158,14 @@
 			<xs:attribute name="unidad" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="distancia" type="xs:positiveInteger" />
+	<xs:element name="distancia">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="1000"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
     <xs:element name="latitud">                             
         <xs:simpleType>
             <xs:restriction base="xs:decimal">
@@ -172,8 +184,9 @@
     </xs:element>
 	<xs:element name="altitud">     
         <xs:simpleType>
-            <xs:restriction base="xs:positiveInteger">
-                <xs:maxInclusive value="100"/>
+            <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="5000"/>
             </xs:restriction>
         </xs:simpleType>    
     </xs:element>                            
