@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6320307,37.2354402,100.3553643</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6320494,37.2356182,101.0045253</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6319412,37.2357294,101.5746302</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6307393,37.2364294,103.6100883</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6305944,37.2364803,103.6930394</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6303780,37.2364848,103.9399954</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6290171,37.2362111,105.4645908</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6288551,37.2360864,105.6801841</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6289713,37.2358895,105.1555418</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6298074,37.2354853,115.3550100</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6300566,37.2352268,109.5173723</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>8.6300786,37.2349193,111.4454957</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6305944,37.2304183,103.6930394</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6282571,37.2302930,104.5595649</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6280559,37.2304237,104.7902144</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6278504,37.2319909,114.8394078</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6278587,37.2323899,117.2750759</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6280396,37.2327770,118.8010785</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6288217,37.2339718,117.9939000</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6288872,37.2342320,117.8235894</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6305944,37.2344884,103.6930394</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6280734,37.2351166,117.5183686</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6305944,37.2351749,103.6930394</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6275146,37.2349472,121.8144785</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6270382,37.2323838,113.8095854</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6268462,37.2319807,114.7246975</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6264320,37.2317121,116.9729443</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6250020,37.2311196,126.8271001</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6247046,37.6250020,126.9202382</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6245280,37.2307439,126.5340588</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6243948,37.2304410,125.9558783</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6244257,37.2302104,125.8631805</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 2</sector>
+        <Point>
+            <coordinates>-8.6246070,37.2300977,125.5822550</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6262489,37.2296932,111.1888580</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.2294023,37.2294023,112.4374298</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6269227,37.2290047,114.3679567</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6271318,37.2278644,120.3321040</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6268915,37.2275975,121.9690433</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6265421,37.2276769,122.8684491</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6255094,37.2286647,121.9525750</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6249289,37.2287312,119.5533111</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6245734,37.2282770,115.5885462</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6247741,37.2276943,112.4670985</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6259238,37.2265710,112.2545581</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6267199,37.2261535,111.6460028</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6275123,37.2260919,105.2083640</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6282895,37.2263276,100.1360904</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 3</sector>
+        <Point>
+            <coordinates>-8.6289710,37.2270174,98.5857047</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <sector>Sector 1</sector>
+        <Point>
+            <coordinates>-8.6309250,37.2323871,103.41</coordinates>
+        </Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Origen</name>
+        <Point>
+            <coordinates>-8.6309250,37.2323871,103.41</coordinates>
+        </Point>
+    </Placemark>
+    </Document>
+</kml>
