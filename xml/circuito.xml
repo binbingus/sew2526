@@ -3,7 +3,7 @@
 <!DOCTYPE circuito SYSTEM "circuito.dtd">
 <circuito>
     <nombre>Autódromo Internacional do Algarve</nombre>
-    <longitud unidad="m">3.684</longitud>
+    <longitudCircuito unidad="m">3.684</longitud>
     <anchura unidad="m">14</anchura>
 
     <fechaCarrera>09-11-2025</fechaCarrera>

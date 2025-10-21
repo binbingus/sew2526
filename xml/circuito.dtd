@@ -3,7 +3,7 @@
                    puntoOrigen, tramos, vencedor, clasificacionMundial)>
 
 <!ELEMENT nombre (#PCDATA)>
-<!ELEMENT longitud (#PCDATA)>
+<!ELEMENT longitudCircuito (#PCDATA)>
 <!ELEMENT anchura (#PCDATA)>
 
 <!ELEMENT fechaCarrera (#PCDATA)>
