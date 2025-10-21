@@ -23,19 +23,19 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="nombre" type="xs:string" />
-	<xs:element name="longitudCircuito" type="xs:string" />
+	<xs:element name="longitudCircuito" type="xs:decimal" />                            <!-- CAMBIO: string -> decimal -->
 	<xs:element name="anchura">
 		<xs:complexType>
 			<xs:simpleContent>
-				<xs:extension base="xs:string">
+				<xs:extension base="xs:decimal">                                        <!-- CAMBIO: string -> decimal -->
 					<xs:attribute name="unidad" type="xs:string" use="required" />
 				</xs:extension>
 			</xs:simpleContent>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="fechaCarrera" type="xs:string" />
-	<xs:element name="horaInicio" type="xs:string" />
-	<xs:element name="numeroVueltas" type="xs:string" />
+	<xs:element name="fechaCarrera" type="xs:date" />                                   <!-- CAMBIO: string -> date -->
+	<xs:element name="horaInicio" type="xs:dateTime" />                                 <!-- CAMBIO: string -> dateTime -->   
+	<xs:element name="numeroVueltas" type="xs:decimal" />                               <!-- CAMBIO: string -> decimal -->
 	<xs:element name="localidad" type="xs:string" />
 	<xs:element name="pais" type="xs:string" />
 	<xs:element name="patrocinador" type="xs:string" />
@@ -60,12 +60,12 @@
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="xs:string">
-					<xs:attribute name="posicion" type="xs:string" use="required" />
+					<xs:attribute name="posicion" type="xs:decimal" use="required" />   
 				</xs:extension>
 			</xs:simpleContent>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="tiempo" type="xs:string" />
+	<xs:element name="tiempo" type="xs:decimal" />                                      <!-- CAMBIO: string -> decimal -->
 	<xs:element name="referencias">
 		<xs:complexType>
 			<xs:sequence>
@@ -80,7 +80,7 @@
 	<xs:element name="fotos">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="unbounded" ref="foto" />
+				<xs:element minOccurs="1" maxOccurs="5" ref="foto" />                   <!-- CAMBIO -> máximo 5 -->
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -88,7 +88,7 @@
 	<xs:element name="videos">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="unbounded" ref="video" />
+				<xs:element minOccurs="1" maxOccurs="3" ref="video" />                  <!-- CAMBIO -> máximo 3 -->
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -120,17 +120,17 @@
 			<xs:attribute name="unidad" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="distancia" type="xs:string" />
-	<xs:element name="latitud" type="xs:string" />
+	<xs:element name="distancia" type="xs:decimal" />                                   <!-- CAMBIO: string -> decimal -->
+	<xs:element name="latitud" type="xs:decimal" />                                     <!-- CAMBIO: string -> decimal -->
 	<xs:element name="longitud">
 		<xs:complexType>
 			<xs:simpleContent>
-				<xs:extension base="xs:string">
+				<xs:extension base="xs:decimal">                                        <!-- CAMBIO: string -> decimal -->  
 					<xs:attribute name="unidad" type="xs:string" use="required" />
 				</xs:extension>
 			</xs:simpleContent>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="altitud" type="xs:string" />
-	<xs:element name="sector" type="xs:string" />
+	<xs:element name="altitud" type="xs:decimal" />                                     <!-- CAMBIO: string -> decimal -->
+	<xs:element name="sector" type="xs:decimal" />                                      <!-- CAMBIO: string -> decimal -->
 </xs:schema>
