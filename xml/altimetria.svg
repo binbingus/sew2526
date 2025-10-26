@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="white"/>
+  
+  <!-- Ejes -->
+  <line x1="80" y1="320" x2="1320" y2="320" stroke="black" stroke-width="2"/>
+  <line x1="80" y1="80" x2="80" y2="320" stroke="black" stroke-width="2"/>
+<line x1="75" y1="320.0" x2="80" y2="320.0" stroke="black" stroke-width="1"/>
+<text x="70" y="324.0" font-size="12" text-anchor="end">0</text>
+<line x1="75" y1="296.0" x2="80" y2="296.0" stroke="black" stroke-width="1"/>
+<text x="70" y="300.0" font-size="12" text-anchor="end">50</text>
+<line x1="75" y1="272.0" x2="80" y2="272.0" stroke="black" stroke-width="1"/>
+<text x="70" y="276.0" font-size="12" text-anchor="end">100</text>
+<line x1="75" y1="248.0" x2="80" y2="248.0" stroke="black" stroke-width="1"/>
+<text x="70" y="252.0" font-size="12" text-anchor="end">150</text>
+<line x1="75" y1="224.0" x2="80" y2="224.0" stroke="black" stroke-width="1"/>
+<text x="70" y="228.0" font-size="12" text-anchor="end">200</text>
+<line x1="75" y1="200.0" x2="80" y2="200.0" stroke="black" stroke-width="1"/>
+<text x="70" y="204.0" font-size="12" text-anchor="end">250</text>
+<line x1="75" y1="176.0" x2="80" y2="176.0" stroke="black" stroke-width="1"/>
+<text x="70" y="180.0" font-size="12" text-anchor="end">300</text>
+<line x1="75" y1="152.0" x2="80" y2="152.0" stroke="black" stroke-width="1"/>
+<text x="70" y="156.0" font-size="12" text-anchor="end">350</text>
+<line x1="75" y1="128.0" x2="80" y2="128.0" stroke="black" stroke-width="1"/>
+<text x="70" y="132.0" font-size="12" text-anchor="end">400</text>
+<line x1="75" y1="104.0" x2="80" y2="104.0" stroke="black" stroke-width="1"/>
+<text x="70" y="108.0" font-size="12" text-anchor="end">450</text>
+<line x1="75" y1="80.0" x2="80" y2="80.0" stroke="black" stroke-width="1"/>
+<text x="70" y="84.0" font-size="12" text-anchor="end">500</text>
+<text x="30" y="200.0" font-size="14" text-anchor="middle" transform="rotate(-90,30,200.0)">Altura (m)</text>
+
+  <polyline points="80.0,271.829425136 174.6858640443043,271.517827856 180.10928914444995,271.244177504 184.29292087682356,270.267157616 219.67265196060396,270.227341088 223.29810832393736,270.108802208 228.5122176606929,269.376996416 261.95980323625713,269.273511632 267.2651527775673,269.525339936 273.70563780495456,264.6295952 297.38247088688684,267.431661296 306.6701870034648,266.506162064 315.97400433261123,270.227341088 455.52321366352356,269.811408848 461.4296751407232,269.70069708799997 467.4488451059022,264.877084256 514.3570443887058,263.707963568 526.3256123979336,262.97548231999997 538.685976579661,263.362928 578.8826537568414,263.444677088 586.8017668050995,270.227341088 595.0536382464394,263.591183072 619.8468220664521,270.227341088 628.4341354363016,261.52905032 637.045600625004,265.371399008 714.1918771113905,264.9321452 727.0728471661648,263.852986736 739.7176661032684,259.122991952 778.1056404019242,259.078285664 786.730523267767,259.263651776 794.1531822618307,259.541178416 803.6609482835111,259.58567336 810.5576343336714,259.7205176 815.9944771109575,266.62934816 856.7976332948838,266.030033696 870.8325235837317,265.103380784 883.5954180796707,262.24059008 917.9339374173568,261.454859216 927.7825124384029,261.023144432 936.4127623751018,261.462764 974.8490403114632,262.614410672 988.8946647420235,264.517497824 1004.8321816493788,266.01579272 1022.7420970963713,266.117812112 1065.9980046615606,266.409918656 1088.6067906431178,269.49998528000003 1107.4720447025063,271.934676608 1127.2765361617219,272.678861744 1153.424905372914,270.3632" stroke="red" stroke-width="3" fill="none"/>
+<text x="80.0" y="345" font-size="12" text-anchor="end" transform="rotate(-90,80.0,345)">1.1</text>
+<text x="174.6858640443043" y="360" font-size="12" text-anchor="end" transform="rotate(-90,174.6858640443043,360)">1.2</text>
+<text x="180.10928914444995" y="345" font-size="12" text-anchor="end" transform="rotate(-90,180.10928914444995,345)">1.3</text>
+<text x="184.29292087682356" y="360" font-size="12" text-anchor="end" transform="rotate(-90,184.29292087682356,360)">2.1</text>
+<text x="219.67265196060396" y="345" font-size="12" text-anchor="end" transform="rotate(-90,219.67265196060396,345)">2.2</text>
+<text x="223.29810832393736" y="360" font-size="12" text-anchor="end" transform="rotate(-90,223.29810832393736,360)">2.3</text>
+<text x="228.5122176606929" y="345" font-size="12" text-anchor="end" transform="rotate(-90,228.5122176606929,345)">3.1</text>
+<text x="261.95980323625713" y="360" font-size="12" text-anchor="end" transform="rotate(-90,261.95980323625713,360)">3.2</text>
+<text x="267.2651527775673" y="345" font-size="12" text-anchor="end" transform="rotate(-90,267.2651527775673,345)">3.3</text>
+<text x="273.70563780495456" y="360" font-size="12" text-anchor="end" transform="rotate(-90,273.70563780495456,360)">4.1</text>
+<text x="297.38247088688684" y="345" font-size="12" text-anchor="end" transform="rotate(-90,297.38247088688684,345)">4.2</text>
+<text x="306.6701870034648" y="360" font-size="12" text-anchor="end" transform="rotate(-90,306.6701870034648,360)">4.3</text>
+<text x="315.97400433261123" y="345" font-size="12" text-anchor="end" transform="rotate(-90,315.97400433261123,345)">5.1</text>
+<text x="455.52321366352356" y="360" font-size="12" text-anchor="end" transform="rotate(-90,455.52321366352356,360)">5.2</text>
+<text x="461.4296751407232" y="345" font-size="12" text-anchor="end" transform="rotate(-90,461.4296751407232,345)">5.3</text>
+<text x="467.4488451059022" y="360" font-size="12" text-anchor="end" transform="rotate(-90,467.4488451059022,360)">6.1</text>
+<text x="514.3570443887058" y="345" font-size="12" text-anchor="end" transform="rotate(-90,514.3570443887058,345)">6.2</text>
+<text x="526.3256123979336" y="360" font-size="12" text-anchor="end" transform="rotate(-90,526.3256123979336,360)">6.3</text>
+<text x="538.685976579661" y="345" font-size="12" text-anchor="end" transform="rotate(-90,538.685976579661,345)">7.1</text>
+<text x="578.8826537568414" y="360" font-size="12" text-anchor="end" transform="rotate(-90,578.8826537568414,360)">7.2</text>
+<text x="586.8017668050995" y="345" font-size="12" text-anchor="end" transform="rotate(-90,586.8017668050995,345)">7.3</text>
+<text x="595.0536382464394" y="360" font-size="12" text-anchor="end" transform="rotate(-90,595.0536382464394,360)">8.1</text>
+<text x="619.8468220664521" y="345" font-size="12" text-anchor="end" transform="rotate(-90,619.8468220664521,345)">8.2</text>
+<text x="628.4341354363016" y="360" font-size="12" text-anchor="end" transform="rotate(-90,628.4341354363016,360)">8.3</text>
+<text x="637.045600625004" y="345" font-size="12" text-anchor="end" transform="rotate(-90,637.045600625004,345)">9.1</text>
+<text x="714.1918771113905" y="360" font-size="12" text-anchor="end" transform="rotate(-90,714.1918771113905,360)">9.2</text>
+<text x="727.0728471661648" y="345" font-size="12" text-anchor="end" transform="rotate(-90,727.0728471661648,345)">9.3</text>
+<text x="739.7176661032684" y="360" font-size="12" text-anchor="end" transform="rotate(-90,739.7176661032684,360)">10.1</text>
+<text x="778.1056404019242" y="345" font-size="12" text-anchor="end" transform="rotate(-90,778.1056404019242,345)">10.2</text>
+<text x="786.730523267767" y="360" font-size="12" text-anchor="end" transform="rotate(-90,786.730523267767,360)">10.3</text>
+<text x="794.1531822618307" y="345" font-size="12" text-anchor="end" transform="rotate(-90,794.1531822618307,345)">11.1</text>
+<text x="803.6609482835111" y="360" font-size="12" text-anchor="end" transform="rotate(-90,803.6609482835111,360)">11.2</text>
+<text x="810.5576343336714" y="345" font-size="12" text-anchor="end" transform="rotate(-90,810.5576343336714,345)">11.3</text>
+<text x="815.9944771109575" y="360" font-size="12" text-anchor="end" transform="rotate(-90,815.9944771109575,360)">12.1</text>
+<text x="856.7976332948838" y="345" font-size="12" text-anchor="end" transform="rotate(-90,856.7976332948838,345)">12.2</text>
+<text x="870.8325235837317" y="360" font-size="12" text-anchor="end" transform="rotate(-90,870.8325235837317,360)">12.3</text>
+<text x="883.5954180796707" y="345" font-size="12" text-anchor="end" transform="rotate(-90,883.5954180796707,345)">13.1</text>
+<text x="917.9339374173568" y="360" font-size="12" text-anchor="end" transform="rotate(-90,917.9339374173568,360)">13.2</text>
+<text x="927.7825124384029" y="345" font-size="12" text-anchor="end" transform="rotate(-90,927.7825124384029,345)">13.3</text>
+<text x="936.4127623751018" y="360" font-size="12" text-anchor="end" transform="rotate(-90,936.4127623751018,360)">14.1</text>
+<text x="974.8490403114632" y="345" font-size="12" text-anchor="end" transform="rotate(-90,974.8490403114632,345)">14.2</text>
+<text x="988.8946647420235" y="360" font-size="12" text-anchor="end" transform="rotate(-90,988.8946647420235,360)">14.3</text>
+<text x="1004.8321816493788" y="345" font-size="12" text-anchor="end" transform="rotate(-90,1004.8321816493788,345)">14.4</text>
+<text x="1022.7420970963713" y="360" font-size="12" text-anchor="end" transform="rotate(-90,1022.7420970963713,360)">15.1</text>
+<text x="1065.9980046615606" y="345" font-size="12" text-anchor="end" transform="rotate(-90,1065.9980046615606,345)">15.2</text>
+<text x="1088.6067906431178" y="360" font-size="12" text-anchor="end" transform="rotate(-90,1088.6067906431178,360)">15.3</text>
+<text x="1107.4720447025063" y="345" font-size="12" text-anchor="end" transform="rotate(-90,1107.4720447025063,345)">15.4</text>
+<text x="1127.2765361617219" y="360" font-size="12" text-anchor="end" transform="rotate(-90,1127.2765361617219,360)">15.5</text>
+<text x="1153.424905372914" y="345" font-size="12" text-anchor="end" transform="rotate(-90,1153.424905372914,345)">final</text>
+<text x="700.0" y="390" font-size="14" text-anchor="middle">Puntos del circuito</text>
+</svg>
