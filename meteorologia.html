@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="estilo/estilo.css"/>
     <link rel="stylesheet" href="estilo/layout.css"/>
     <link rel="icon" href="multimedia/img/motogp.ico"/> <!-- HTML2: Ejercicio 3: favicon -->
+    <script src="js/ciudad.js"></script>
     <title>MotoGP-Meteorologia</title>
 </head>
 
@@ -33,6 +34,14 @@
     <!-- HTML2: ejercicio 8: migas -->
     <p>Estás en: <a href="index.html">Inicio</a> | <strong>Meteorología</strong></p>
 
-    <p>En desarrollo</p>
+    <script>
+        let ciudad = new Ciudad("Portimão", "Portugal", "Portimonense");
+        ciudad.rellenarAttrib();
+        document.write("<h2>" + ciudad.nombreTexto() + "</h2>");
+        document.write("<h3>" + ciudad.nombrePais() + "</h3>");
+        document.write(ciudad.infoSecundaria());
+        ciudad.coordenadas();
+    </script>
+
 </body>
 </html>

@@ -6,36 +6,32 @@ class Ciudad {
     }
 
     rellenarAttrib() {
-        poblacion = 59867; 
-        longitud = 37.13;
-        latitud = -8.53;
+        this.poblacion = 59867; 
+        this.longitud = 37.13;
+        this.latitud = -8.53;
     }
 
     // Nombre de la ciudad en formato de texto
     nombreTexto() {
-        const ciudad = document.createElement("p");
-        ciudad.textContent(this.nombreCiudad);
+        return this.nombreCiudad;
     }
 
     // Nombre del país en formato de texto
     nombrePais() {
-        const pais = document.createElement("p");
-        pais.textContent(this.pais);
+        return this.pais;
     }
 
     // Gentilicio y población en una lista no ordenada dentro de una cadena
     infoSecundaria() {
-        const lista = document.createElement("ul");
-        const gent = lista.createElement("li");
-        gent.textContent("Gentilicio: " + this.gentilicio);
-
-        const pob = lista.createElement("li");
-        pob.textContent("Población: " + this.poblacion + " habitantes");
+        return "<ul>"+
+                    "<li>Gentilicio: " + this.gentilicio +
+                    "<li>Población: " + this.poblacion + " habitantes"+
+                "</ul>";
     }
 
     // Escribir en el documento las coordenadas usando document.write()
     coordenadas() {
-        document.write("<p> Longitud: " + this.longitud + " - Latitud: " + this.latitud + "</p>");
+        document.write("<p>Longitud: " + this.longitud + " - Latitud: " + this.latitud + "</p>");
     }
 
 } 
