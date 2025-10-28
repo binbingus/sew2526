@@ -154,9 +154,10 @@
 				<xs:element ref="latitud" />
 				<xs:element ref="altitud" />
 				<xs:element ref="sector" />
+				<xs:element ref="nombrePunto" />
 			</xs:sequence>
 			<xs:attribute name="unidad" type="xs:string" use="required" />
-			<xs:attribute name="nombrePunto" type="xs:string" use="required" />
+			
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="distancia">
@@ -191,5 +192,6 @@
             </xs:restriction>
         </xs:simpleType>    
     </xs:element>                            
-	<xs:element name="sector" type="xs:positiveInteger" />                                      
+	<xs:element name="sector" type="xs:positiveInteger" />   
+	<xs:element name="nombrePunto" type="xs:string" />                                   
 </xs:schema>
