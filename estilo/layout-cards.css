@@ -1,23 +1,27 @@
 /* Olga Alonso Grela UO288066 */
 /* Grid Layout para el juego de memoria */
 
+/* E: 001*/
 main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
+    gap: 3vw;
 }
 
+/* E:002 */
 main h2 {
     grid-column: 1/-1;
 }
 
 @media (min-width:320px) and (max-width:799px) {
+    /* E:001 */
     main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1em;
+        gap: 3vw;
     }
 
+    /* E:002 */
     main article {
         width: 40vw;
     }
