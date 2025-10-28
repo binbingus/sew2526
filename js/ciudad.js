@@ -24,8 +24,8 @@ class Ciudad {
     // Gentilicio y población en una lista no ordenada dentro de una cadena
     infoSecundaria() {
         return "<ul>"+
-                    "<li>Gentilicio: " + this.gentilicio +
-                    "<li>Población: " + this.poblacion + " habitantes"+
+                    "<li>Gentilicio: " + this.gentilicio + "</li>"+
+                    "<li>Población: " + this.poblacion + " habitantes</li>"+
                 "</ul>";
     }
 
