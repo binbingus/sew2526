@@ -23,15 +23,15 @@ class Ciudad {
 
     // Gentilicio y población en una lista no ordenada dentro de una cadena
     infoSecundaria() {
-        return "<ul>"+
-                    "<li>Gentilicio: " + this.gentilicio + "</li>"+
-                    "<li>Población: " + this.poblacion + " habitantes</li>"+
-                "</ul>";
+        return "<li>Gentilicio: " + this.gentilicio + "</li>"+
+                "<li>Población: " + this.poblacion + " habitantes</li>";
     }
 
     // Escribir en el documento las coordenadas usando document.write()
     coordenadas() {
-        document.write("<p>Longitud: " + this.longitud + " - Latitud: " + this.latitud + "</p>");
+        const mensaje = document.createElement("p");
+        mensaje.textContent = "Longitud: " + this.longitud + " - Latitud: " + this.latitud;
+        document.body.appendChild(mensaje);
     }
 
 } 

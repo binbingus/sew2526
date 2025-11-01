@@ -37,9 +37,23 @@
     <script>
         let ciudad = new Ciudad("Portimão", "Portugal", "Portimonense");
         ciudad.rellenarAttrib();
-        document.write("<h2>" + ciudad.nombreTexto() + "</h2>");
-        document.write("<h3>" + ciudad.nombrePais() + "</h3>");
-        document.write(ciudad.infoSecundaria());
+
+        // Nombre de la ciudad como h2
+        const nombreCiudad = document.createElement("h2");
+        nombreCiudad.textContent = ciudad.nombreTexto();
+
+        // Nombre del país como h3
+        const nombrePais = document.createElement("h3");
+        nombrePais.textContent = ciudad.nombrePais();
+
+        // Información secundaria
+        const infoSecundaria = document.createElement("ul");
+        infoSecundaria.innerHTML = ciudad.infoSecundaria();
+        
+
+        document.body.appendChild(nombreCiudad);
+        document.body.appendChild(nombrePais);
+        document.body.appendChild(infoSecundaria);
         ciudad.coordenadas();
     </script>
 
