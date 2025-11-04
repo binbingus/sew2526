@@ -18,7 +18,7 @@ class Cronometro {
 
         // Marcar como arrancado y comenzar la actualización periódica
         this.arrancado = true;
-        this.corriendo = setInterval(actualizar(), 100);
+        this.corriendo = setInterval(this.actualizar(), 100);
     }
 
     actualizar() {
@@ -54,10 +54,11 @@ class Cronometro {
 
     parar() {
         clearInterval(this.corriendo);
+        clearTimeout(this.timeoutID);
         this.arrancado = false;
     }
 
-    reniniciar() {
+    reiniciar() {
         clearInterval(this.corriendo);
         this.tiempo = 0;
         this.mostrar();

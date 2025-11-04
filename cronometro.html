@@ -31,17 +31,19 @@
 
     <p>Estás en: <a href="index.html">Inicio</a> | <a href="juegos.html">Juegos</a> | <strong></strong>Cronómetro</strong></p>
 
-    <main>
-        <h2>Cronómetro</h2>
-        <p>00:00:0</p>
-        <button onclick="cronometro.iniciar()">Iniciar</button>
-        <button onclick="cronometro.detener()">Detener</button>
-        <button onclick="cronometro.reiniciar()">Reiniciar</button>
-    </main>
-
     <script>
         let cronometro = new Cronometro();
     </script>
+
+    <main>
+        <h2>Cronómetro</h2>
+        <p>00:00:0</p>
+        <button onclick="cronometro.arrancar()">Iniciar</button>
+        <button onclick="cronometro.parar()">Detener</button>
+        <button onclick="cronometro.reiniciar()">Reiniciar</button>
+    </main>
+
+    
 
 </body>
 </html>
