@@ -5,6 +5,9 @@ class Memoria {
         this.segunda_carta = null;
 
         this.barajarCartas();
+
+        this.cronometro = new Cronometro(); 
+        this.cronometro.arrancar();
     }
 
     barajarCartas() {
@@ -39,6 +42,7 @@ class Memoria {
         const cartas_reveladas = main.querySelectorAll("article[data-estado=revelada]");
 
         if (cartas_reveladas.length === main.querySelectorAll("article").length) {
+            this.cronometro.parar();
             return true;
         } else {
             return false;
@@ -74,7 +78,7 @@ class Memoria {
             this.primera_carta.dataset.estado = "null";
             this.segunda_carta.dataset.estado = "null"; 
             this.reiniciarAtributos();
-        }, 1000);
+        }, 500);
     }
 
     comprobarPareja() {
