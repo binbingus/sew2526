@@ -23,13 +23,14 @@ class Cronometro {
 
     actualizar() {
         // Calcular el tiempo transcurrido desde el inicio
-        var ahora = null;
+        let ahora = null;
+
         try {
             ahora = Temporal.now();
-            this.tiempo += ahora.since(this.inicio).total('seconds');
+            this.tiempo = ahora.since(this.inicio).total('milliseconds');
         } catch (error) {
             ahora = new Date();
-            this.tiempo += (ahora - this.inicio) / 1000;
+            this.tiempo = ahora - this.inicio;
         }
 
         // Actualizar la visualización
@@ -39,12 +40,9 @@ class Cronometro {
     }
 
     mostrar() {
-        // Calcular minutos, segundos y décimas
-        var minutos = Math.floor(this.tiempo / 60);
-        var segundos = Math.floor(this.tiempo % 60);
-        var decimas = Math.floor((this.tiempo - Math.floor(this.tiempo)) * 10);
-
-        const main = document.querySelector("main");
+        let minutos = Math.floor(this.tiempo / 60000); // 1 minuto = 60000 ms
+        let segundos = Math.floor((this.tiempo % 60000) / 1000); // Segundos restantes
+        let decimas = Math.floor((this.tiempo % 1000) / 100); // Décimas de segundo     
 
         const parrafo = document.querySelector("main p");
         parrafo.textContent = parseInt(minutos).toString().padStart(2, '0') + ":" +
