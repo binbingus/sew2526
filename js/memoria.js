@@ -8,6 +8,14 @@ class Memoria {
 
         this.cronometro = new Cronometro(); 
         this.cronometro.arrancar();
+
+        // Asignar evento de clic a cada carta
+        const cartas = document.querySelectorAll("main article");
+        cartas.forEach(carta => {
+            carta.addEventListener("click", (event) => {
+                this.voltearCarta(event.currentTarget);
+            });
+        });
     }
 
     barajarCartas() {
@@ -91,5 +99,7 @@ class Memoria {
             this.cubrirCartas();
         }
     }
+
+
 
 }
