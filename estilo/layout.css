@@ -38,10 +38,10 @@ p {
     padding-left: calc(100vmax/90);
 }
 
+/* E:001 */
 h2, h3, h4, h5, h6 {
     padding-left: calc(100vmax/90);
-}
-    
+}    
 
 /* E:001 */
 img, video, audio {
@@ -54,6 +54,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
+    margin-bottom: 2em;
 }
 
 /* E:002 */
