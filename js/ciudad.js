@@ -1,4 +1,11 @@
 class Ciudad {
+    #nombreCiudad;
+    #pais;
+    #gentilicio;
+    #poblacion;
+    #longitud;
+    #latitud;
+
     constructor(nombreCiudad, pais, gentilicio) {
         this.nombreCiudad = nombreCiudad;   // Portimão
         this.pais = pais;                   // Portugal

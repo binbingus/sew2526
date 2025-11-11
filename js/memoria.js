@@ -1,13 +1,18 @@
 class Memoria {
+    #tablero_bloqueado;
+    #primera_carta;
+    #segunda_carta;
+    #cronometro;
+
     constructor() {
-        this.tablero_bloqueado = true;
-        this.primera_carta = null;
-        this.segunda_carta = null;
+        this.#tablero_bloqueado = true;
+        this.#primera_carta = null;
+        this.#segunda_carta = null;
 
-        this.barajarCartas();
+        this.#barajarCartas();
 
-        this.cronometro = new Cronometro(); 
-        this.cronometro.arrancar();
+        this.#cronometro = new Cronometro(); 
+        this.#cronometro.arrancar();
 
         // Asignar evento de clic a cada carta
         const cartas = document.querySelectorAll("main article");
@@ -18,7 +23,7 @@ class Memoria {
         });
     }
 
-    barajarCartas() {
+    #barajarCartas() {
         const main = document.querySelector("main");
         const cartas = Array.from(main.querySelectorAll("article"));
 
@@ -28,29 +33,29 @@ class Memoria {
         }
 
         cartas.forEach(carta => main.appendChild(carta));
-        this.tablero_bloqueado = false;
+        this.#tablero_bloqueado = false;
     }
 
-    reiniciarAtributos() {
-        this.tablero_bloqueado = false;
-        this.primera_carta = null;
-        this.segunda_carta = null;
+    #reiniciarAtributos() {
+        this.#tablero_bloqueado = false;
+        this.#primera_carta = null;
+        this.#segunda_carta = null;
     }
 
-    deshabilitarCartas() {
-        this.primera_carta.dataset.estado = "revelada";
-        this.segunda_carta.dataset.estado = "revelada";
+    #deshabilitarCartas() {
+        this.#primera_carta.dataset.estado = "revelada";
+        this.#segunda_carta.dataset.estado = "revelada";
 
-        this.comprobarJuego();
-        this.reiniciarAtributos();
+        this.#comprobarJuego();
+        this.#reiniciarAtributos();
     }
 
-    comprobarJuego() {
+    #comprobarJuego() {
         const main = document.querySelector("main");
         const cartas_reveladas = main.querySelectorAll("article[data-estado=revelada]");
 
         if (cartas_reveladas.length === main.querySelectorAll("article").length) {
-            this.cronometro.parar();
+            this.#cronometro.parar();
             return true;
         } else {
             return false;
@@ -59,44 +64,39 @@ class Memoria {
 
     // LÓGICA DEL JUEGO
     voltearCarta(carta) {
-        /* COMPROBACIONES:
-        - La carta pulsada no está deshabilitada
-        - El tablero no está bloqueado
-        */
-
-        if (carta.dataset.estado === "revelada" || this.tablero_bloqueado) {
+        if (carta.dataset.estado === "revelada" || this.#tablero_bloqueado) {
             return;
         }
 
-        if (!this.primera_carta) {
-            this.primera_carta = carta;
+        if (!this.#primera_carta) {
+            this.#primera_carta = carta;
             carta.dataset.estado = "volteada";
             return;
-        } else if (this.primera_carta && !this.segunda_carta) {
-            this.segunda_carta = carta;
+        } else if (this.#primera_carta && !this.#segunda_carta) {
+            this.#segunda_carta = carta;
             carta.dataset.estado = "volteada";
-            this.comprobarPareja();
+            this.#comprobarPareja();
             return;
         }        
     }
 
-    cubrirCartas() {
+    #cubrirCartas() {
         // Pone boca abajo las dos cartas volteadas si no son iguales tras un retardo de 1.5 segundos
         setTimeout(() => {
-            this.primera_carta.dataset.estado = "null";
-            this.segunda_carta.dataset.estado = "null"; 
-            this.reiniciarAtributos();
+            this.#primera_carta.dataset.estado = "null";
+            this.#segunda_carta.dataset.estado = "null"; 
+            this.#reiniciarAtributos();
         }, 500);
     }
 
-    comprobarPareja() {
-        var valor_primera = this.primera_carta.querySelector("img").getAttribute("alt");
-        var valor_segunda = this.segunda_carta.querySelector("img").getAttribute("alt");
+    #comprobarPareja() {
+        var valor_primera = this.#primera_carta.querySelector("img").getAttribute("alt");
+        var valor_segunda = this.#segunda_carta.querySelector("img").getAttribute("alt");
 
         if (valor_primera === valor_segunda) {
-            this.deshabilitarCartas();
+            this.#deshabilitarCartas();
         } else {
-            this.cubrirCartas();
+            this.#cubrirCartas();
         }
     }
 
