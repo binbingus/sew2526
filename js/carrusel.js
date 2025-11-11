@@ -11,7 +11,7 @@ class Carrusel {
         this.#maximo = 4;
     }
 
-    #getFotografias() {
+    getFotografias() {
         var flickrAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
         $.getJSON(flickrAPI, {
             tags: this.#busqueda,
@@ -34,12 +34,12 @@ class Carrusel {
             let imgTag = `<img src="${foto.media.m.replace("_m", "_z")}" alt="${foto.title}" title="${foto.title}">`;
             this.#imagenes.push(imgTag);
         }
+
+        this.#mostrarFotografias();
     }
 
-    mostrarFotografias() {
+    #mostrarFotografias() {
         // Mostrar primeras 5 fotos obtenidas 
-        this.#getFotografias();
-
         let fotoActual = this.#imagenes[this.#actual];
 
         // Foto se muestra en un article con un h2 con el texto “Imágenes del circuito de Autodromo Do Algarve”
