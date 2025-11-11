@@ -129,3 +129,9 @@ main dd {
 main p {
     text-align: justify;
 }
+
+/* E:002 */
+body section article {
+    background-color: white;
+    border-radius: 1em;
+}
