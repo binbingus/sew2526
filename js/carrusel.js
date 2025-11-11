@@ -4,6 +4,7 @@ class Carrusel {
     #maximo;
     #jsonFotografias;
     #imagenes;
+    #intervalo;
 
     constructor() {
         this.#busqueda = "AutodromoDoAlgarve";
@@ -24,7 +25,7 @@ class Carrusel {
         })
         .fail((jqxhr, textStatus, error) => {
             console.error("Error al obtener las imágenes: ", textStatus, error);
-        });
+        }); 
     }
 
     #procesarJSONFotografias() {
@@ -47,8 +48,19 @@ class Carrusel {
         const h2 = $('<h2>Imágenes del circuito Autódromo do Algarve</h2>');
         article.append(h2);
         article.append(fotoActual);
-
-        // Insertar el article antes del footer
         $('body').append(article);
+
+        this.#intervalo = setInterval(this.#cambiarFotografia.bind(this), 3000);
+    }
+
+    #cambiarFotografia() {
+         this.#actual++;
+
+        if (this.#actual > this.#maximo) {
+            this.#actual = 0;
+        }
+ 
+        const nuevaFoto = this.#imagenes[this.#actual];
+        $('article img').replaceWith(nuevaFoto);
     }
 }
