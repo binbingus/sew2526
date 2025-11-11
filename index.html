@@ -13,6 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
             crossorigin="anonymous"></script>           <!-- JQuery -->
+    <script src = "js/noticias.js"></script>
     <script src = "js/carrusel.js"></script>
     <title>MotoGP</title>
 </head>
@@ -37,6 +38,9 @@
     <script>
         let carrusel = new Carrusel();
         carrusel.getFotografias();
+
+        let noticias = new Noticias();
+        noticias.buscar();
     </script>
 </body>
 </html>
