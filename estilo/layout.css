@@ -96,13 +96,21 @@ main dd {
         display: none;
     }
 
-    /* E:001 */
-    Video, audio {
+    /* E:003 */
+    article h2 + img {
         width: 100%;
         height: auto;
     }
 
+    /* E:001 */
+    video, audio {
+        width: 100%;
+        height: auto;
+    }
+
+    /* E:002 */
     table th, table td {
         font-size: calc(100vmax/70);
     }
+
 }
