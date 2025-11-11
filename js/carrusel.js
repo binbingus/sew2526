@@ -20,6 +20,7 @@ class Carrusel {
         })
         .done((data) => {
             this.#jsonFotografias = data;
+            this.#procesarJSONFotografias();
         })
         .fail((jqxhr, textStatus, error) => {
             console.error("Error al obtener las imágenes: ", textStatus, error);
@@ -27,7 +28,6 @@ class Carrusel {
     }
 
     #procesarJSONFotografias() {
-        // Extraer la info de 5 fotos diferentes del JSON obtenido -> this.imagenes
         this.#imagenes = [];
         for (let i = 0; i <= this.#maximo; i++) {
             let foto = this.#jsonFotografias.items[i];
@@ -39,7 +39,6 @@ class Carrusel {
     mostrarFotografias() {
         // Mostrar primeras 5 fotos obtenidas 
         this.#getFotografias();
-        this.#procesarJSONFotografias();
 
         let fotoActual = this.#imagenes[this.#actual];
 
