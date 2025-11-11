@@ -20,11 +20,9 @@ class Carrusel {
         })
         .done((data) => {
             this.#jsonFotografias = data;
-            resolve(data);
         })
         .fail((jqxhr, textStatus, error) => {
             console.error("Error al obtener las imágenes: ", textStatus, error);
-            reject(error);
         });
     }
 
