@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="estilo/estilo.css"/>
     <link rel="stylesheet" href="estilo/layout.css"/>
     <link rel="icon" href="multimedia/img/motogp.ico"/> <!-- HTML2: Ejercicio 3: favicon -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+            crossorigin="anonymous"></script>           <!-- JQuery -->
+    <script src = "js/carrusel.js"></script>
     <title>MotoGP</title>
 </head>
 
@@ -31,5 +35,10 @@
     </header>
 
     <p>En desarrollo</p>
+
+    <script>
+        let carrusel = new Carrusel();
+        carrusel.mostrarFotografias();
+    </script>
 </body>
 </html>
