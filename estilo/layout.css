@@ -31,17 +31,12 @@ header nav {
     flex-direction: row;
     justify-content: space-around;
     gap: .4em;
-}
-
-/* E:002 */
-p {
-    padding-left: calc(100vmax/90);
-}
+} 
 
 /* E:001 */
-h2, h3, h4, h5, h6 {
-    padding-left: calc(100vmax/90);
-}    
+h2, h3, h4, h5, h6, p {
+    margin: .5vmax;
+}
 
 /* E:001 */
 img, video, audio {
@@ -75,6 +70,11 @@ main dt {
 }
 
 /* E:002 */
+main dl {
+    padding-bottom: 3vmax;
+}
+
+/* E:002 */
 main dd {
     padding-right: 2em;
 }
@@ -100,7 +100,7 @@ main section h2 {
 
 /* E:004 */
 main section article p, h3 {
-    margin: .5vmax 2vmax;
+    margin: .5vmax
 }
 
 /* E:004 */
