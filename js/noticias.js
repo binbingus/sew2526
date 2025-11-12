@@ -49,17 +49,19 @@ class Noticias {
 
     #mostrarNoticias() {
         const seccion = $('<section></section>');
+        const encabezado = $('<h2></h2>').text('Noticias Recientes sobre MotoGP');
+        seccion.append(encabezado);
 
         this.#noticias.forEach(noticia => {
             const article = $('<article></article>');
-            const h2 = $('<h3></h3>').text(noticia.title);
-            const p = $('<p></p>').text(noticia.description);
-            const img = noticia.image_url ? $('<img>').attr('src', noticia.image_url).attr('alt', noticia.title) : null;
+            const h2 = $('<h3></h3>').text(noticia.titulo);
+            const p = $('<p></p>').text(noticia.entradilla);
+            const img = noticia.imagen ? $('<img>').attr('src', noticia.imagen).attr('alt', noticia.titulo) : null;
             const enlace = $('<a></a>')
-                .attr('href', noticia.url)
+                .attr('href', noticia.enlace)
                 .attr('target', '_blank')
                 .text('Leer más');
-            const fuente = $('<p></p>').text(`Fuente: ${noticia.source}`);
+            const fuente = $('<p></p>').text(`Fuente: ${noticia.fuente}`);
 
             article.append(h2, p, img, enlace, fuente);
             seccion.append(article);
@@ -67,4 +69,5 @@ class Noticias {
 
         $('body').append(seccion);
     }
+
 }

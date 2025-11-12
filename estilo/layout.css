@@ -79,25 +79,32 @@ main dd {
     padding-right: 2em;
 }
 
-/* E:002 */
-body + section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
+/* E:001 */
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* E:003 */
-body section h2 {
-    grid-column: 1/-1;
+main section article {
+    display: block;
+    padding: 1.5vmax .5vmax;
+    margin: 1vmax 5vmax;
 }
 
 /* E:003 */
-body section article {
-    padding-bottom: 5%;
+main section h2 {
+    text-align: center;
 }
 
 /* E:004 */
-body section article a {
+main section article p, h3 {
+    margin: .5vmax 2vmax;
+}
+
+/* E:004 */
+main section article a {
     display: block;
     text-align: center;
 }
@@ -124,6 +131,7 @@ body section article a {
     article h2 + img {
         width: 100%;
         height: auto;
+
     }
 
     /* E:001 */
@@ -146,12 +154,13 @@ body section article a {
     }
 
     /* E:003 */
-    body section article {
+    main section article {
         text-align: center;
+        margin: 0;
     }
 
     /* E:004 */
-    body section article h3{
+    main section article h3{
         text-align: center;
     }
 }

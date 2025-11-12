@@ -44,6 +44,7 @@ class Carrusel {
         let fotoActual = this.#imagenes[this.#actual];
 
         // Foto se muestra en un article con un h2 con el texto “Imágenes del circuito de Autodromo Do Algarve”
+        const main = $('main');
         const article = $('<article></article>');
         const h2 = $('<h2>Imágenes del circuito Autódromo do Algarve</h2>');
         article.append(h2);
@@ -51,6 +52,7 @@ class Carrusel {
         $('body').append(article);
 
         this.#intervalo = setInterval(this.#cambiarFotografia.bind(this), 3000);
+        main.append(article);
     }
 
     #cambiarFotografia() {
