@@ -12,7 +12,7 @@ class Noticias {
     }
 
     async buscar() {
-        const endpoint = `https://api.thenewsapi.com/v1/news/all?locale=us&language=en&api_token=${this.#url}&search=${encodeURIComponent(this.#busqueda)}`;
+        const endpoint = `https://api.thenewsapi.com/v1/news/all?locale=es&language=es&api_token=${this.#url}&search=${encodeURIComponent(this.#busqueda)}`;
 
         console.log('Buscando noticias en:', endpoint);
 
@@ -55,15 +55,14 @@ class Noticias {
         this.#noticias.forEach(noticia => {
             const article = $('<article></article>');
             const h2 = $('<h3></h3>').text(noticia.titulo);
-            const p = $('<p></p>').text(noticia.entradilla);
-            const img = noticia.imagen ? $('<img>').attr('src', noticia.imagen).attr('alt', noticia.titulo) : null;
+            const p = $('<p></p>').text(noticia.entradilla);const img = noticia.imagen ? $('<img>').attr('src', noticia.imagen).attr('alt', noticia.titulo) : null;
             const enlace = $('<a></a>')
                 .attr('href', noticia.enlace)
                 .attr('target', '_blank')
                 .text('Leer más');
             const fuente = $('<p></p>').text(`Fuente: ${noticia.fuente}`);
 
-            article.append(h2, p, img, enlace, fuente);
+            article.append(h2, p, enlace, fuente);
             seccion.append(article);
         });
 
