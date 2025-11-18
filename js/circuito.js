@@ -2,7 +2,7 @@ class Circuito {
     constructor() {
         this.#comprobarApiFile();
 
-        const inputFile = document.querySelector('input[type="file"][accept=".html"]');
+        const inputFile = document.querySelector('input[accept=".html"]');
         if (!inputFile) return;
 
         inputFile.addEventListener("change", (evento) => {
@@ -87,7 +87,7 @@ class Circuito {
 
 class CargadorSVG {
     constructor() {
-        const inputFile = document.querySelector('input[type="file"][accept=".svg"]');
+        const inputFile = document.querySelector('input[accept=".svg"]');
         if (!inputFile) return;
 
         inputFile.addEventListener("change", (evento) => {
@@ -129,4 +129,52 @@ class CargadorSVG {
         document.body.appendChild(img);
     }
     
+}
+
+class CargadorKML {
+    constructor() {
+        const inputFile = document.querySelector('input[accept=".kml"]');
+        if (!inputFile) return;
+
+        inputFile.addEventListener("change", (evento) => {
+            const archivo = evento.target.files[0];
+            this.#leerArchivoKML(archivo);
+        });
+    }
+
+    #leerArchivoKML(archivo) {
+        if (!archivo) return;
+
+        if (archivo.type !== "application/vnd.google-earth.kml+xml" && !archivo.name.endsWith(".kml")) {
+            alert("Por favor, seleccione un archivo KML válido.");
+            return;
+        }
+
+        const lector = new FileReader();
+
+        lector.onload = (evento) => {
+            const contenidoKML = evento.target.result;
+            this.#mostrarMapa(contenidoKML);
+        };
+
+        lector.readAsText(archivo, "UTF-8");
+    }
+
+    #mostrarMapa(kmlText) {
+        // Crear Blob y URL temporal para el KML
+        const blob = new Blob([kmlText], { type: "application/vnd.google-earth.kml+xml" });
+        const urlKML = URL.createObjectURL(blob);
+
+        // Inicializar mapa centrado en coordenadas por defecto
+        const mapa = new google.maps.Map(document.getElementById("mapa"), {
+            center: { lat: 37.1, lng: -8.5 }, // ejemplo: Algarve
+            zoom: 10
+        });
+
+        // Añadir capa KML
+        const kmlLayer = new google.maps.KmlLayer({
+            url: urlKML,
+            map: mapa
+        });
+    }
 }
