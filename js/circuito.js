@@ -2,9 +2,12 @@ class Circuito {
     constructor() {
         this.#comprobarApiFile();
 
-        document.querySelector('input[type="file"]').addEventListener("change", (evento) => {
-            let archivo = evento.target.files[0];
-            this.leerArchivoHTML(archivo);
+        const inputFile = document.querySelector('input[type="file"][accept=".html"]');
+        if (!inputFile) return;
+
+        inputFile.addEventListener("change", (evento) => {
+            const archivo = evento.target.files[0];
+            this.#leerArchivoHTML(archivo);
         });
     }
 
@@ -17,7 +20,7 @@ class Circuito {
         }
     }
 
-    leerArchivoHTML(archivo) {
+    #leerArchivoHTML(archivo) {
         if (!archivo) return;
 
         const lector = new FileReader();
@@ -25,7 +28,6 @@ class Circuito {
         lector.onload = (evento) => {
             const contenido = evento.target.result;
 
-            // Convertir texto HTML a documento DOM e insertar en el DOM principal
             const parser = new DOMParser();
             const docHTML = parser.parseFromString(contenido, "text/html");
 
@@ -80,6 +82,51 @@ class Circuito {
                 insertarNodo(child, document.body);
             }
         });
+    }
+}
+
+class CargadorSVG {
+    constructor() {
+        const inputFile = document.querySelector('input[type="file"][accept=".svg"]');
+        if (!inputFile) return;
+
+        inputFile.addEventListener("change", (evento) => {
+            const archivo = evento.target.files[0];
+            this.#leerArchivoSVG(archivo);
+        });
+    }
+
+    #leerArchivoSVG(archivo) {
+        if (!archivo) return;
+
+        if (archivo.type !== "image/svg+xml") {
+            alert("Por favor, seleccione un archivo SVG válido.");
+            return;
+        }
+
+        const lector = new FileReader();
+
+        lector.onload = (evento) => {
+            const contenidoSVG = evento.target.result;
+            this.#insertarSVG(contenidoSVG);
+        };
+
+        lector.readAsText(archivo, "UTF-8");
+    }
+
+    #insertarSVG(contenido) {
+        const h2 = document.createElement("h2");
+        h2.textContent = "Altimetría del circuito:";
+        document.body.appendChild(h2);
+    
+        const blob = new Blob([contenido], { type: "image/svg+xml" });
+        const urlSVG = URL.createObjectURL(blob);
+    
+        const img = document.createElement("img");
+        img.src = urlSVG;
+        img.alt = "Gráfico de altimetría del circuito";
+    
+        document.body.appendChild(img);
     }
     
 }

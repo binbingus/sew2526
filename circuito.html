@@ -40,11 +40,22 @@
     <!-- CIRCUITO 21:  Autódromo Internacional do Algarve -->
     <p>Seleccione un archivo HTML:</p>
     <p>
-        <input type="file">
+        <input type="file" accept=".html">
+    </p>
+
+    <p>Seleccione un archivo SVG:</p>
+    <p>
+        <input type="file" accept=".svg">
+    </p>
+
+    <p>Seleccione un archivo KML:</p>
+    <p>
+        <input type="file" accept=".kml">
     </p>
 
     <script>
         let circuito = new Circuito();
+        let cargadorSVG = new CargadorSVG();
     </script>
 </body>
 </html>
