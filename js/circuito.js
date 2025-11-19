@@ -76,10 +76,12 @@ class Circuito {
             padre.appendChild(clon);
         };
     
+        const main = document.querySelector('main');
+
         // Recorrer todos los hijos directos del body
         docHTML.body.childNodes.forEach(child => {
             if (child.nodeType === Node.ELEMENT_NODE) {
-                insertarNodo(child, document.body);
+                insertarNodo(child, main);
             }
         });
     }
@@ -117,7 +119,6 @@ class CargadorSVG {
     #insertarSVG(contenido) {
         const h2 = document.createElement("h2");
         h2.textContent = "Altimetría del circuito:";
-        document.body.appendChild(h2);
     
         const blob = new Blob([contenido], { type: "image/svg+xml" });
         const urlSVG = URL.createObjectURL(blob);
@@ -126,7 +127,9 @@ class CargadorSVG {
         img.src = urlSVG;
         img.alt = "Gráfico de altimetría del circuito";
     
-        document.body.appendChild(img);
+        const main = document.querySelector('main');
+        main.appendChild(h2);
+        main.appendChild(img);
     }
     
 }
@@ -161,6 +164,7 @@ class CargadorKML {
     }
 
     #mostrarMapa(kmlText) {
+        const main = document.querySelector('main');
         // Crear Blob y URL temporal para el KML
         const blob = new Blob([kmlText], { type: "application/vnd.google-earth.kml+xml" });
         const urlKML = URL.createObjectURL(blob);

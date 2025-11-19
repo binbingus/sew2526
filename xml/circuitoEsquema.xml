@@ -8,7 +8,7 @@
     <longitudCircuito unidad="m">3.684</longitudCircuito>
     <anchura unidad="m">14</anchura>
 
-    <fechaCarrera>2025-11-09</fechaCarrera>
+    <fechaCarrera>2025-11-16</fechaCarrera>
     <horaInicio>14:00:00</horaInicio>
     <numeroVueltas>25</numeroVueltas>
     <localidad>Algarve</localidad>
@@ -22,11 +22,11 @@
     </referencias>
 
     <fotos>
-        <foto>"multimedia/img/circuito_sectores.webp"</foto>
+        <foto>../multimedia/img/circuito_sectores.webp</foto>
     </fotos>
 
     <videos>
-        <video>"multimedia/video/circuito.mp4"</video>
+        <video>../multimedia/video/circuito.mp4</video>
     </videos>
 
     <puntoOrigen>
@@ -449,14 +449,14 @@
     </tramos>
 
     <vencedor>
-        <piloto posicion="1">Pendiente</piloto>
-        <tiempo>PT00H00M00S</tiempo>
+        <piloto posicion="1">Marco Bezzecchi</piloto>
+        <tiempo>PT0H40M52S</tiempo>
     </vencedor>
 
     <clasificacionMundial>
-        <piloto posicion="1">Pendiente</piloto>
-        <piloto posicion="2">Pendiente</piloto>
-        <piloto posicion="3">Pendiente</piloto>
+        <piloto posicion="1">Marc Márquez</piloto>
+        <piloto posicion="2">Alex Márquez</piloto>
+        <piloto posicion="3">Pedro Acosta</piloto>
     </clasificacionMundial>
 
 </circuito>

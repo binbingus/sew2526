@@ -30,7 +30,7 @@ def main():
     # Archivos
     base_dir = os.path.dirname(os.path.abspath(__file__))
     xml_file = os.path.join(base_dir, "circuitoEsquema.xml")
-    html_file = os.path.join("./sew2526/infoCircuito.html")
+    html_file = os.path.join("./sew2526/xml/infoCircuito.html")
 
     NS = {'c': 'http://www.uniovi.es'}
 
@@ -71,37 +71,6 @@ def main():
     html.close_tag("head")
 
     html.open_tag("body")
-
-    # Header
-    """
-    <header>
-        <!-- HTML2 : ejercicio 8: h1 es un enlace a la página principal -->
-        <h1><a href="index.html">MotoGP Desktop</a></h1>
-
-        <nav>
-            <a href="index.html" title="Página de inicio">Inicio</a>
-            <a href="piloto.html" title="Información del piloto">Piloto</a>
-            <a href="circuito.html" title="Información del circuito">Circuito</a>
-            <a href="meteorologia.html" title="Información de la meteorología en la próxima semana">Meteorologia</a>
-            <a href="clasificaciones.html" title="Clasificaciones" class="active">Clasificaciones</a>
-            <a href="juegos.html" title="Página de juegos">Juegos</a>
-            <a href="ayuda.html" title="Información de ayuda sobre la página">Ayuda</a>
-        </nav>
-    </header>
-    """
-    html.open_tag("header")
-    html.add_line('<h1>MotoGP Desktop</h1>')
-    # nav
-    html.open_tag("nav")
-    html.add_line('<a href="index.html" title="Página de inicio">Inicio</a>')
-    html.add_line('<a href="piloto.html" title="Información del piloto">Piloto</a>')
-    html.add_line('<a href="circuito.html" title="Información del circuito" class="active">Circuito</a>')
-    html.add_line('<a href="meteorologia.html" title="Información de la meteorología en la próxima semana">Meteorologia</a>')
-    html.add_line('<a href="clasificaciones.html" title="Clasificaciones">Clasificaciones</a>')
-    html.add_line('<a href="juegos.html" title="Página de juegos">Juegos</a>')
-    html.add_line('<a href="ayuda.html" title="Información de ayuda sobre la página">Ayuda</a>')
-    html.close_tag("nav")
-    html.close_tag("header")
 
     # Información general
     info_items = [
