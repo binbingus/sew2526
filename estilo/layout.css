@@ -12,6 +12,7 @@ body {
 main{
     padding: 1em;
     overflow-x: auto;
+    margin: 0 8vmax;
 }
 
 /* HTML-CSS 3: ej5: Aplicar Flexbox al header y nav */
@@ -34,7 +35,7 @@ header nav {
 } 
 
 /* E:001 */
-h2, h3, h4, h5, h6, p {
+h2, h3, h4, h5, h6 {
     margin: .5vmax;
 }
 
@@ -84,13 +85,13 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 1vmax;
 }
 
 /* E:003 */
 main section article {
     display: block;
     padding: 1.5vmax .5vmax;
-    margin: 1vmax 5vmax;
 }
 
 /* E:003 */
@@ -111,6 +112,12 @@ main section article a {
 
 /* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
 @media (min-width:320px) and (max-width:799px) {
+
+    /* E:001 */
+    main {
+        margin: 0;
+    }
+
     /* E:001 */
     header {
         flex-direction: column;

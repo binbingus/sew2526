@@ -5,8 +5,9 @@
 main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3vw;
-    margin: 0 2vw; 
+    grid-auto-rows: auto;
+    gap: 1rem;
+    margin: 0 5vmax;
 }
 
 /* E:002 */
@@ -22,13 +23,13 @@ main p {
     font-size: 1.5em;
 }
 
-@media (min-width:320px) and (max-width:799px) {
+@media (min-width:0px) and (max-width:799px) {
     /* E:001 */
     main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 3vw;
-        margin: 0 2vw;
+        gap: 1vw;
+        margin: 0;
     }
 
     /* E:002 */

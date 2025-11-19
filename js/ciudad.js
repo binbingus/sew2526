@@ -39,11 +39,13 @@ class Ciudad {
                 "<li>Población: " + this.#poblacion + " habitantes</li>";
     }
 
-    // Escribir en el documento las coordenadas usando document.write()
+    // Escribir en el documento las coordenadas
     coordenadas() {
         const mensaje = document.createElement("p");
         mensaje.textContent = "Longitud: " + this.#longitud + " - Latitud: " + this.#latitud;
-        document.body.appendChild(mensaje);
+
+        const main = $("main");
+        main.append(mensaje);
     }
 
     // ========================================================================
@@ -120,7 +122,6 @@ class Ciudad {
             filaCabecera.appendChild(th);
         });
         thead.appendChild(filaCabecera);
-
         tabla.appendChild(thead);
 
         // datos
@@ -145,9 +146,11 @@ class Ciudad {
 
             tbody.appendChild(fila);
         });
-
         tabla.appendChild(tbody);
-        document.body.appendChild(tabla);
+
+        const main = document.querySelector("main");
+        main.appendChild(tabla);
+
     }
 
 
@@ -259,7 +262,8 @@ class Ciudad {
         }
         tabla.appendChild(tbody);
 
-        document.body.appendChild(tabla);
+        const main = document.querySelector("main");
+        main.appendChild(tabla);
     }
 
 } 

@@ -38,7 +38,7 @@ class Noticias {
 
         this.#noticias = this.#datos.data.map(item => ({
             titulo: item.title || 'Sin título',
-            entradilla: item.description || '',
+            entradilla: item.snippet || '',
             enlace: item.url || '#',
             fuente: item.source || '',
             imagen: item.image_url || ''
@@ -66,7 +66,7 @@ class Noticias {
             seccion.append(article);
         });
 
-        $('body').append(seccion);
+        $('main').append(seccion);
     }
 
 }

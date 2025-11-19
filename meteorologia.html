@@ -37,30 +37,34 @@
     <!-- HTML2: ejercicio 8: migas -->
     <p>Estás en: <a href="index.html">Inicio</a> | <strong>Meteorología</strong></p>
 
+    <main>
+        
+    </main>
+
     <script>
-        let ciudad = new Ciudad("Portimão", "Portugal", "Portimonense");
-        ciudad.rellenarAttrib();
+            let ciudad = new Ciudad("Portimão", "Portugal", "Portimonense");
+            ciudad.rellenarAttrib();
 
-        // Nombre de la ciudad como h2
-        const nombreCiudad = document.createElement("h2");
-        nombreCiudad.textContent = ciudad.nombreTexto();
+            // Nombre de la ciudad como h2
+            const nombreCiudad = document.createElement("h2");
+            nombreCiudad.textContent = ciudad.nombreTexto();
 
-        // Nombre del país como h3
-        const nombrePais = document.createElement("h3");
-        nombrePais.textContent = ciudad.nombrePais();
+            // Nombre del país como h3
+            const nombrePais = document.createElement("h3");
+            nombrePais.textContent = ciudad.nombrePais();
 
-        // Información secundaria
-        const infoSecundaria = document.createElement("ul");
-        infoSecundaria.innerHTML = ciudad.infoSecundaria();
+            // Información secundaria
+            const infoSecundaria = document.createElement("ul");
+            infoSecundaria.innerHTML = ciudad.infoSecundaria();
 
-        document.body.appendChild(nombreCiudad);
-        document.body.appendChild(nombrePais);
-        document.body.appendChild(infoSecundaria);
-        ciudad.coordenadas();
+            const main = document.querySelector("main");
+            main.appendChild(nombreCiudad);
+            main.appendChild(nombrePais);
+            main.appendChild(infoSecundaria);
+            ciudad.coordenadas();
 
-        ciudad.getMeteorologiaCarrera();
-        ciudad.getMeteorologiaEntrenos();
-    </script>
-
+            ciudad.getMeteorologiaCarrera();
+            ciudad.getMeteorologiaEntrenos();
+        </script>
 </body>
 </html>
