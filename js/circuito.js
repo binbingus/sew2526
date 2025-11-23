@@ -133,7 +133,7 @@ class CargadorSVG {
     }
     
 }
-
+    
 class CargadorKML {
     constructor() {
         const inputFile = document.querySelector('input[accept=".kml"]');
@@ -145,40 +145,79 @@ class CargadorKML {
         });
     }
 
+    // Lee el archivo KML usando FileReader
     #leerArchivoKML(archivo) {
         if (!archivo) return;
 
-        if (archivo.type !== "application/vnd.google-earth.kml+xml" && !archivo.name.endsWith(".kml")) {
-            alert("Por favor, seleccione un archivo KML válido.");
-            return;
-        }
-
         const lector = new FileReader();
-
         lector.onload = (evento) => {
-            const contenidoKML = evento.target.result;
-            this.#mostrarMapa(contenidoKML);
+            const contenido = evento.target.result;
+
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(contenido, "application/xml");
+
+            // Extraer todos los LineString del KML
+            const lineStrings = xmlDoc.getElementsByTagName("LineString");
+            const tramos = [];
+
+            for (let i = 0; i < lineStrings.length; i++) {
+                const coordNode = lineStrings[i].getElementsByTagName("coordinates")[0];
+                if (!coordNode) continue;
+
+                const texto = coordNode.textContent.trim();
+                const puntos = texto.split(/\s+/).map(coord => {
+                    const [lng, lat, alt] = coord.split(",").map(Number);
+                    return { lat, lng, alt };
+                });
+                tramos.push(puntos);
+            }
+
+            if (tramos.length === 0) return;
+
+            this.insertarCapaKML(tramos);
         };
 
         lector.readAsText(archivo, "UTF-8");
     }
 
-    #mostrarMapa(kmlText) {
-        const main = document.querySelector('main');
-        // Crear Blob y URL temporal para el KML
-        const blob = new Blob([kmlText], { type: "application/vnd.google-earth.kml+xml" });
-        const urlKML = URL.createObjectURL(blob);
+    // Inserta la información del KML en el mapa dinámico
+    insertarCapaKML(tramos) {
+        if (!mapaDinamicoGoogle.mapa) return;
 
-        // Inicializar mapa centrado en coordenadas por defecto
-        const mapa = new google.maps.Map(document.getElementById("mapa"), {
-            center: { lat: 37.1, lng: -8.5 }, // ejemplo: Algarve
-            zoom: 10
+        // Colocar marcador en el punto origen
+        const origen = tramos[0][0];
+        new google.maps.Marker({
+            position: { lat: origen.lat, lng: origen.lng },
+            map: mapaDinamicoGoogle.mapa,
+            title: "Inicio del circuito"
         });
 
-        // Añadir capa KML
-        const kmlLayer = new google.maps.KmlLayer({
-            url: urlKML,
-            map: mapa
+        // Dibujar cada tramo como polyline
+        tramos.forEach(tramo => {
+            const path = tramo.map(p => ({ lat: p.lat, lng: p.lng }));
+            new google.maps.Polyline({
+                path,
+                strokeColor: "#FF0000",
+                strokeOpacity: 1.0,
+                strokeWeight: 3,
+                map: mapaDinamicoGoogle.mapa
+            });
         });
+
+        // Centrar el mapa en el origen
+        mapaDinamicoGoogle.mapa.setCenter({ lat: origen.lat, lng: origen.lng });
+        mapaDinamicoGoogle.mapa.setZoom(15);
     }
 }
+
+var mapaDinamicoGoogle = new Object();
+
+function initMap(){
+    var portimao = { lat: 37.2323871, lng: -8.6309250 };
+    mapaDinamicoGoogle.mapa = new google.maps.Map(document.querySelector("main > div"), { zoom: 13, center: portimao });
+}
+
+mapaDinamicoGoogle.initMap = initMap;
+
+
+

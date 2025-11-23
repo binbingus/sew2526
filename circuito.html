@@ -13,11 +13,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
             crossorigin="anonymous"></script> <!-- JQuery -->
-    <script src="js/circuito.js"></script>
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap">
-    </script> <!-- Google Maps -->
-
     <title>MotoGP-Circuito</title>
 </head>
 
@@ -52,11 +47,18 @@
 
         <p>Seleccione un archivo KML:</p>
         <p> <input type="file" accept=".kml"> </p>
+
+        <div></div>
     </main>
-    
+
+    <script src="js/circuito.js"></script>
     <script>
-        let circuito = new Circuito();
+        let circuitoHTML = new Circuito();
         let cargadorSVG = new CargadorSVG();
+        let cargadorKML = new CargadorKML();
     </script>
+    <!-- KEY = AIzaSyBfQi2RPmwg8xo3eTsA2Ce88MXhpy0OoVc -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfQi2RPmwg8xo3eTsA2Ce88MXhpy0OoVc&callback=mapaDinamicoGoogle.initMap"></script>
+
 </body>
 </html>
