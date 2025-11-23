@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="estilo/layout.css"/>
     <link rel="icon" href="multimedia/img/motogp.ico"/> <!-- HTML2: Ejercicio 3: favicon -->
     <script src="js/cronometro.js"></script>
+    <script src="js/menuMoviles.js"></script>
     <title>MotoGP-Juegos-Cronómetro</title>
 </head>
 
 <body>
     <header>
         <h1><a href="index.html">MotoGP Desktop</a></h1>
+
+        <!-- Botón hamburguesa -->
+        <button aria-label="Mostrar/Ocultar menú" aria-expanded="false">&#9776;</button>
 
         <nav>
             <a href="index.html" title="Página de inicio">Inicio</a>
@@ -29,7 +33,7 @@
         </nav>
     </header>
 
-    <p>Estás en: <a href="index.html">Inicio</a> | <a href="juegos.html">Juegos</a> | <strong></strong>Cronómetro</strong></p>
+    <p>Estás en: <a href="index.html">Inicio</a> | <a href="juegos.html">Juegos</a> | <strong>Cronómetro</strong></p>
 
     <script>
         let cronometro = new Cronometro();

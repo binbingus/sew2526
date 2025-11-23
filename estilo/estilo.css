@@ -39,6 +39,15 @@ header a {
     text-decoration: none;
 }
 
+/* E:002 */
+header > button {
+    display: none; /* predeterminado */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 /* HTML-CSS 3: ej2: elemento activo del nav */
 /* E:012 */
 header a.active {
