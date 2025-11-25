@@ -21,7 +21,7 @@
         <h1><a href="index.html">MotoGP Desktop</a></h1>
 
         <!-- Botón hamburguesa -->
-        <button aria-label="Mostrar/Ocultar menú" aria-expanded="false">&#9776;</button>
+        <button>&#9776;</button>
 
         <nav>
             <a href="index.html" title="Página de inicio">Inicio</a>
