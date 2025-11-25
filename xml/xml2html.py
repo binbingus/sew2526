@@ -8,8 +8,6 @@ import os
 import xml.etree.ElementTree as ET
 
 class Html:
-    """Clase para generar código HTML de manera estructurada"""
-    
     def __init__(self, title="Información del circuito"):
         self.title = title
         self.content = []
@@ -30,7 +28,7 @@ def main():
     # Archivos
     base_dir = os.path.dirname(os.path.abspath(__file__))
     xml_file = os.path.join(base_dir, "circuitoEsquema.xml")
-    html_file = os.path.join("./sew2526/xml/infoCircuito.html")
+    html_file = os.path.join("./xml/infoCircuito.html")
 
     NS = {'c': 'http://www.uniovi.es'}
 
