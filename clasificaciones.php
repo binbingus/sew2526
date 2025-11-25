@@ -15,6 +15,46 @@
 </head>
 
 <body>
+    <?php
+        class Clasificacion {
+            private $documento;
+            public $ganador;
+            public $tiempoGanador;
+
+            public function __construct() {
+                $this->documento = "xml/circuitoEsquema.xml";
+                $this->ganador = "Sin definir";
+                $this->tiempoGanador = "00:00:00";
+            }
+
+            public function consultar() {
+                $datos = file_get_contents($this->documento);
+                if ($datos == null) {
+                    echo "<h3>Error en el archivo XML recibido";
+                }
+
+                $xml = new SimpleXMLElement($datos);
+
+                // Nombre ganador de la carrera y su tiempo
+                $this->ganador = (string)$xml->vencedor->piloto;
+                $tiempo = (string)$xml->vencedor->tiempo; // PT0H40M52S
+
+                preg_match('/PT(\d+)H(\d+)M(\d+)S/', $tiempo, $matches);
+                $horas = (int)$matches[1];
+                $minutos = (int)$matches[2];
+                $segundos = (int)$matches[3];
+
+                // Convertimos todo a segundos
+                $totalSegundos = $horas * 3600 + $minutos * 60 + $segundos;
+
+                // Formateamos a mm:ss.s
+                $min = floor($totalSegundos / 60);
+                $seg = $totalSegundos % 60;
+                $this->tiempoGanador = sprintf("%02d:%04.1f", $min, $seg);
+            }
+        }
+    ?>
+
     <!-- HTML2: Ejercicio 7: elemento header: elementos comunes a todos los documentos -->
     <header>
         <!-- HTML2 : ejercicio 8: h1 es un enlace a la página principal -->
@@ -37,6 +77,28 @@
     <!-- HTML2: ejercicio 8: migas -->
     <p>Estás en: <a href="index.html">Inicio</a> | <strong>Clasificaciones</strong></p>
 
-    <p>En desarrollo</p>
+    <main>
+        <h2>Clasificación</h2>
+
+        <?php
+            session_start();
+
+            if (!isset($_SESSION['clasificacion'])) {
+                $_SESSION['clasificacion'] = new Clasificacion();
+            }
+            $clasificacion = $_SESSION['clasificacion'];
+
+            $clasificacion->consultar();
+
+            echo "
+                <ul>
+                    <li>Ganador: {$clasificacion->ganador} </li>
+                    <li>Tiempo: {$clasificacion->tiempoGanador}</li>
+                </ul>
+            ";
+        ?>
+    </main>
+
+    
 </body>
 </html>
