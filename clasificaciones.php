@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="author" content="Olga Alonso Grela"/>
-    <meta name="description" content="Cronómetro"/>
-    <meta name="keywords" content="cronometro, juegos"/>
+    <meta name="description" content="página de las clasificaciones"/>
+    <meta name="keywords" content="Clasificaciones, MotoGP, piloto, Raúl Fernández, resultados, estadísticas"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="estilo/estilo.css"/>
     <link rel="stylesheet" href="estilo/layout.css"/>
     <link rel="icon" href="multimedia/img/motogp.ico"/> <!-- HTML2: Ejercicio 3: favicon -->
-    <script src="js/cronometro.js"></script>
     <script src="js/menuMoviles.js"></script>
-    <title>MotoGP-Juegos-Cronómetro</title>
+    <title>MotoGP-Clasificaciones</title>
 </head>
 
 <body>
+    <!-- HTML2: Ejercicio 7: elemento header: elementos comunes a todos los documentos -->
     <header>
+        <!-- HTML2 : ejercicio 8: h1 es un enlace a la página principal -->
         <h1><a href="index.html">MotoGP Desktop</a></h1>
 
         <!-- Botón hamburguesa -->
@@ -27,24 +28,15 @@
             <a href="piloto.html" title="Información del piloto">Piloto</a>
             <a href="circuito.html" title="Información del circuito">Circuito</a>
             <a href="meteorologia.html" title="Información de la meteorología en la próxima semana">Meteorologia</a>
-            <a href="clasificaciones.php" title="Clasificaciones">Clasificaciones</a>
-            <a href="juegos.html" title="Página de juegos" class="active">Juegos</a>
+            <a href="clasificaciones.php" title="Clasificaciones" class="active">Clasificaciones</a>
+            <a href="juegos.html" title="Página de juegos">Juegos</a>
             <a href="ayuda.html" title="Información de ayuda sobre la página">Ayuda</a>
         </nav>
     </header>
 
-    <p>Estás en: <a href="index.html">Inicio</a> | <a href="juegos.html">Juegos</a> | <strong>Cronómetro</strong></p>
+    <!-- HTML2: ejercicio 8: migas -->
+    <p>Estás en: <a href="index.html">Inicio</a> | <strong>Clasificaciones</strong></p>
 
-    <script>
-        let cronometro = new Cronometro();
-    </script>
-
-    <main>
-        <h2>Cronómetro</h2>
-        <p>00:00.0</p>
-        <button onclick="cronometro.arrancar()">Iniciar</button>
-        <button onclick="cronometro.parar()">Detener</button>
-        <button onclick="cronometro.reiniciar()">Reiniciar</button>
-    </main>
+    <p>En desarrollo</p>
 </body>
 </html>
