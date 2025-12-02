@@ -118,6 +118,38 @@ main section article a {
     text-align: center;
 }
 
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;      
+    padding: 2rem;
+}
+
+form label,
+form input[type="text"],
+form input[type="number"],
+form input[type="radio"] {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+form input[type="radio"] {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+form input[type="submit"] {
+    display: block;
+    padding: 0.75rem;
+}
+
 /* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
 @media (min-width:320px) and (max-width:799px) {
 

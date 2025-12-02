@@ -153,45 +153,40 @@ body section article {
 
 /* FORM */
 form {
-    display: flex;
-    flex-direction: column;
+    max-width: 50rem;      
+    background-color: #f7f7f7;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1);
 }
 
-/* Cada pregunta como bloque */
 form label,
 form input[type="text"],
 form input[type="number"],
 form input[type="radio"] {
-    display: block;
     width: 100%;
-    margin-bottom: 1em;
 }
 
-/* Radios inline pero con separación */
 form input[type="radio"] {
     width: auto;
-    display: inline-block;
-    margin-right: 1em;
 }
 
-/* Inputs de texto y número */
 form input[type="text"],
 form input[type="number"] {
-    box-sizing: border-box;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
 }
 
-/* Botón enviar */
 form input[type="submit"] {
-    display: block;
     width: 100%;
     background-color: #0000FA;
     color: white;
     font-weight: bold;
     border: none;
+    border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 form input[type="submit"]:hover {
-    background-color: #0000FA;
+    background-color: #000099;
 }

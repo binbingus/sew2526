@@ -15,6 +15,9 @@
 
 <body>
     <?php
+    session_start
+    require_once("../cronometro.php");
+
     class Prueba {
         private $crono;
         private $mysqli;
@@ -31,7 +34,8 @@
 
         /* Resetear cosas */
         function init() {
-
+            if (!isset($_SESSION)) session_start();
+            $_SESSION['inicio_prueba'] = null;
         }
 
         /* Iniciar prueba: inciar crono */
@@ -54,18 +58,42 @@
         <h2>Prueba de usabilidad</h2>
 
         <?php
-        $prueba = new Prueba();
+        $errores = [];
+        $respuestas = [];
 
-        if (isset($_POST["init"])) {
-            $prueba->iniciarPrueba();
-        }
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $campos = [
+                "edad", "genero", "profesion", "valoracion",
+                "pregunta5", "pregunta6", "pregunta7", "pregunta8",
+                "pregunta9", "pregunta10"
+            ];
 
-        if (isset($_POST["fin"])) {
-            $config->terminarPrueba();
+            foreach ($campos as $campo) {
+                if (empty($_POST[$campo])) {
+                    $errores[] = "Debes responder el campo $campo.";
+                } else {
+                    $respuestas[$campo] = trim($_POST[$campo]);
+                }
+            }
+
+            if (empty($errores)) {
+                echo "<p>¡Formulario completado correctamente! Tus respuestas:</p><ul>";
+                foreach ($respuestas as $campo => $valor) {
+                    echo "<li><strong>$campo:</strong> " . htmlspecialchars($valor) . "</li>";
+                }
+                echo "</ul>";
+                // Aquí se pueden guardar las respuestas en la base de datos
+            } else {
+                echo "<ul style='color:red;'>";
+                foreach ($errores as $error) {
+                    echo "<li>$error</li>";
+                }
+                echo "</ul>";
+            }
         }
         ?>
 
-        <form action="#" method="post">
+            <form action="#" method="post">
                 <label for="edad">Edad:</label>
                 <input type="number" name="edad" id="edad" min="1" max="120"
                     value="<?= isset($respuestas['edad']) ? htmlspecialchars($respuestas['edad']) : "" ?>" required/>
@@ -87,7 +115,6 @@
                     value="<?= isset($respuestas['valoracion']) ? htmlspecialchars($respuestas['valoracion']) : "" ?>" required/>
                 
             <?php
-            // Preguntas 5 a 10 sobre la experiencia con la app
             for ($i = 5; $i <= 10; $i++) {
                 $valor = isset($respuestas["pregunta$i"]) ? htmlspecialchars($respuestas["pregunta$i"]) : "";
                 echo "
