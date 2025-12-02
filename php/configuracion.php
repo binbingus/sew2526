@@ -104,50 +104,46 @@
                 return "<p>Error: conexión no disponible</p>";
             }
 
+            $resultado = $this->mysqli->query("SHOW TABLES");
+            if (!$resultado || $resultado->num_rows === 0) {
+                return "<p>No hay tablas en la base de datos para reiniciar.</p>";
+            }
+        
             $fichero = fopen("uo288066_db.csv", "w");
-
-            /* Tabla usuarios */
-            fputcsv($fichero, ["Tabla usuarios"]);
-            $stmt = $this->mysqli->prepare("SELECT * FROM usuarios");
-            $stmt->execute();
-            $resultado = $stmt->get_result();
+            if (!$fichero) {
+                return "<p>Error creando el archivo CSV.</p>";
+            }
+        
+            // 1. Dispositivos
+            fputcsv($fichero, ["id_dispositivo","nombre_dispositivo"]);
+            $resultado = $this->mysqli->query("SELECT id_dispositivo, nombre_dispositivo FROM Dispositivos");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
             }
-            $stmt->close();
-
-            /* Tabla dispositivos */
-            fputcsv($fichero, ["Tabla dispositivos"]);
-            $stmt = $this->mysqli->prepare("SELECT * FROM dispositivos");
-            $stmt->execute();
-            $resultado = $stmt->get_result();
+        
+            // 2. Observaciones
+            fputcsv($fichero, ["id_observacion","id_resultado","comentarios_facilitador"]);
+            $resultado = $this->mysqli->query("SELECT id_observacion, id_resultado, comentarios_facilitador FROM Observaciones");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
             }
-            $stmt->close();
-
-            /* Tabla resultados */
-            fputcsv($fichero, ["Tabla resultados"]);
-            $stmt = $this->mysqli->prepare("SELECT * FROM resultados");
-            $stmt->execute();
-            $resultado = $stmt->get_result();
+        
+            // 3. Resultados
+            fputcsv($fichero, ["id_resultado","id_usuario","id_dispositivo","tiempo_completado","tarea_completada","comentarios_usuario","propuestas_mejora","valoracion"]);
+            $resultado = $this->mysqli->query("SELECT id_resultado, id_usuario, id_dispositivo, tiempo_completado, tarea_completada, comentarios_usuario, propuestas_mejora, valoracion FROM Resultados");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
             }
-            $stmt->close();
-
-            /* Tabla observaciones */
-            fputcsv($fichero, ["Tabla observaciones"]);
-            $stmt = $this->mysqli->prepare("SELECT * FROM observaciones");
-            $stmt->execute();
-            $resultado = $stmt->get_result();
+        
+            // 4. Usuarios
+            fputcsv($fichero, ["id_usuario","profesion","edad","genero","pericia_informatica"]);
+            $resultado = $this->mysqli->query("SELECT id_usuario, profesion, edad, genero, pericia_informatica FROM Usuarios");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
             }
-            $stmt->close();
-
+        
             fclose($fichero);
-
+        
             return "<p>Datos exportados correctamente a uo288066_db.csv.</p>";
         }
     }

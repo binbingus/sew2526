@@ -1,7 +1,7 @@
-"Tabla usuarios"
-"Tabla dispositivos"
+id_dispositivo,nombre_dispositivo
 1,ordenador
 2,tableta
 3,telefono
-"Tabla resultados"
-"Tabla observaciones"
+id_observacion,id_resultado,comentarios_facilitador
+id_resultado,id_usuario,id_dispositivo,tiempo_completado,tarea_completada,comentarios_usuario,propuestas_mejora,valoracion
+id_usuario,profesion,edad,genero,pericia_informatica
