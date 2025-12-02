@@ -66,7 +66,7 @@
                 return "<p>No hay tablas en la base de datos para reiniciar.</p>";
             }
 
-            $tablas = ['observaciones', 'resultados', 'usuarios', 'dispositivos'];
+            $tablas = ['observaciones', 'resultados', 'usuarios'];
 
             foreach ($tablas as $tabla) {
                 $stmt = $this->mysqli->prepare("DELETE FROM $tabla");
