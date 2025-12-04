@@ -95,6 +95,10 @@
                 $stmt->close();
             }
 
+            $stmt = $this->mysqli->prepare("DROP DATABASE IF EXISTS uo288066_DB");
+            $stmt->execute();
+            $stmt->close();
+
             return "<p>Base de datos eliminada correctamente.</p>";
         }
 
