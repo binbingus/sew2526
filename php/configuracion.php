@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="../estilo/estilo.css"/>
     <link rel="stylesheet" href="../estilo/layout.css"/>
-    <link rel="icon" href="multimedia/img/motogp.ico"/> <!-- HTML2: Ejercicio 3: favicon -->
+    <link rel="icon" href="../multimedia/img/motogp.ico"/> <!-- HTML2: Ejercicio 3: favicon -->
     <title>MotoGP</title>
 </head>
 
@@ -33,7 +33,7 @@
                 return "<p>Error: conexión no disponible</p>";
             }
 
-            $this->eliminarBD();
+            $this->borrarTablas();
 
             if (!file_exists(self::SCRIPT)) {
                 return "<p>Error: no se encontró el archivo " . self::SCRIPT . "</p>";
@@ -66,7 +66,7 @@
                 return "<p>No hay tablas en la base de datos para reiniciar.</p>";
             }
 
-            $tablas = ['observaciones', 'resultados', 'usuarios'];
+            $tablas = ['observaciones', 'respuesta', 'prueba', 'usuarios'];
 
             foreach ($tablas as $tabla) {
                 $stmt = $this->mysqli->prepare("DELETE FROM $tabla");
@@ -85,7 +85,7 @@
                 return "<p>Error: conexión no disponible</p>";
             }
 
-            $tablas = ['observaciones', 'resultados', 'usuarios', 'dispositivos'];
+            $tablas = ['observaciones', 'respuesta', 'prueba', 'usuarios', 'dispositivos'];
 
             foreach ($tablas as $tabla) {
                 $stmt = $this->mysqli->prepare("DROP TABLE IF EXISTS $tabla");
@@ -98,6 +98,24 @@
             $stmt = $this->mysqli->prepare("DROP DATABASE IF EXISTS uo288066_DB");
             $stmt->execute();
             $stmt->close();
+
+            return "<p>Base de datos eliminada correctamente.</p>";
+        }
+
+        function borrarTablas() {
+            if (!$this->mysqli || $this->mysqli->connect_errno) {
+                return "<p>Error: conexión no disponible</p>";
+            }
+
+            $tablas = ['observaciones', 'respuesta', 'prueba', 'usuarios', 'dispositivos'];
+
+            foreach ($tablas as $tabla) {
+                $stmt = $this->mysqli->prepare("DROP TABLE IF EXISTS $tabla");
+                if (!$stmt || !$stmt->execute()) {
+                    return "<p>Error eliminando tabla $tabla: " . $this->mysqli->error . "</p>";
+                }
+                $stmt->close();
+            }
 
             return "<p>Base de datos eliminada correctamente.</p>";
         }
@@ -126,22 +144,29 @@
             }
         
             // 2. Observaciones
-            fputcsv($fichero, ["id_observacion","id_resultado","comentarios_facilitador"]);
-            $resultado = $this->mysqli->query("SELECT id_observacion, id_resultado, comentarios_facilitador FROM Observaciones");
+            fputcsv($fichero, ["id_observacion","id_prueba","comentarios"]);
+            $resultado = $this->mysqli->query("SELECT id_observacion, id_prueba, comentarios FROM Observaciones");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
             }
         
             // 3. Resultados
-            fputcsv($fichero, ["id_resultado","id_usuario","id_dispositivo","tiempo_completado","tarea_completada","comentarios_usuario","propuestas_mejora","valoracion"]);
-            $resultado = $this->mysqli->query("SELECT id_resultado, id_usuario, id_dispositivo, tiempo_completado, tarea_completada, comentarios_usuario, propuestas_mejora, valoracion FROM Resultados");
+            fputcsv($fichero, ["id_resultado","id_usuario","id_dispositivo","tiempo", "valoracion"]);
+            $resultado = $this->mysqli->query("SELECT id_prueba, id_usuario, id_dispositivo, tiempo, valoracion FROM Prueba");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
             }
         
             // 4. Usuarios
-            fputcsv($fichero, ["id_usuario","profesion","edad","genero","pericia_informatica"]);
-            $resultado = $this->mysqli->query("SELECT id_usuario, profesion, edad, genero, pericia_informatica FROM Usuarios");
+            fputcsv($fichero, ["id_usuario","profesion","edad","genero"]);
+            $resultado = $this->mysqli->query("SELECT id_usuario, profesion, edad, genero pericia_informatica FROM Usuarios");
+            while ($fila = $resultado->fetch_assoc()) {
+                fputcsv($fichero, $fila);
+            }
+
+            // 5. Respuestas
+            fputcsv($fichero, ["id_respuesta","id_prueba","pregunta","respuesta"]);
+            $resultado = $this->mysqli->query("SELECT id_respuesta, id_prueba, pregunta, respuesta FROM Respuesta");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
             }
@@ -154,7 +179,7 @@
     ?>
 
     <header>
-        <h1><a href="index.html">MotoGP Desktop</a></h1>
+        <h1><a href="../index.html">MotoGP Desktop</a></h1>
     </header>
 
     <main>

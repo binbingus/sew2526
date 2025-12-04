@@ -1,21 +1,6 @@
-<!DOCTYPE HTML>
+<?php
+    session_start();
 
-<html lang="es">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="author" content="Olga Alonso Grela"/>
-    <meta name="description" content="Cronómetro"/>
-    <meta name="keywords" content="cronometro, juegos"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="estilo/estilo.css"/>
-    <link rel="stylesheet" href="estilo/layout.css"/>
-    <link rel="icon" href="multimedia/img/motogp.ico"/> <!-- HTML2: Ejercicio 3: favicon -->
-    <script src="js/menuMoviles.js"></script>
-    <title>MotoGP-Juegos-Cronómetro</title>
-</head>
-
-<body>
-    <?php
     class Cronometro {
         private $tiempo;
         private $inicio;
@@ -35,15 +20,57 @@
         }
 
         public function mostrar() {
+            $now = microtime(true);
+            $this->tiempo = $now - $this->inicio;
+
             $min = floor($this->tiempo / 60);
             $seg = $this->tiempo - ($min * 60);
             $formateado = sprintf("%02d:%04.1f", $min, $seg);
 
             return $formateado;
         }
+
+        public function getTiempoSegundos() {
+            $min = floor($this->tiempo / 60);
+            return $this->tiempo - ($min * 60);
+        }
+    }
+
+    // Crear o recuperar cronómetro de sesión
+    if (!isset($_SESSION['crono'])) {
+        $_SESSION['crono'] = new Cronometro();
+    }
+    $crono = $_SESSION['crono'];
+
+    // Detectar si se quiere mostrar la interfaz
+    if (defined('CRONO_SILENT') && CRONO_SILENT === true) {
+        return; // No mostrar nada, solo usar la clase
+    }
+
+    // --- Desde aquí es la interfaz para usar cronometro.php como página independiente ---
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if(isset($_POST['arrancar'])) $crono->arrancar();
+        if(isset($_POST['parar'])) $crono->parar();
     }
     ?>
 
+<!DOCTYPE HTML>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Olga Alonso Grela"/>
+    <meta name="description" content="Cronómetro"/>
+    <meta name="keywords" content="cronometro, juegos"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="estilo/estilo.css"/>
+    <link rel="stylesheet" href="estilo/layout.css"/>
+    <link rel="icon" href="multimedia/img/motogp.ico"/> <!-- HTML2: Ejercicio 3: favicon -->
+    <script src="js/menuMoviles.js"></script>
+    <title>MotoGP-Juegos-Cronómetro</title>
+</head>
+
+<body>
     <header>
         <h1><a href="index.html">MotoGP Desktop</a></h1>
 
@@ -66,30 +93,14 @@
     <main>
         <h2>Cronómetro</h2>
         <?php
-        session_start();
-
-        if (!isset($_SESSION['crono'])) {
-            $_SESSION['crono'] = new Cronometro();
-        }
-        $crono = $_SESSION['crono'];
-
-        if (count($_POST)>0) {
-            if(isset($_POST['arrancar'])) $crono->arrancar();
-            if(isset($_POST['parar'])) $crono->parar();
-            if(isset($_POST['mostrar'])) $crono->mostrar();
-        }
-
         echo "<p>Tiempo: " . $crono->mostrar() . "</p>";
-
-        echo "
-            <h3>Pulse un botón</h3>
-            <form action='#' method='post' name='botones'>
-                <input type='submit' name='arrancar' value='arrancar'/>
-                <input type='submit' name='parar' value='parar'/>
-                <input type='submit' name='mostrar' value='mostrar'/>
-            </form>
-        ";
         ?>
+        
+        <form action='#' method='post' name='botones'>
+            <input type='submit' name='arrancar' value='arrancar'/>
+            <input type='submit' name='parar' value='parar'/>
+            <input type='submit' name='mostrar' value='mostrar'/>
+        </form>
         
     </main>
 </body>
