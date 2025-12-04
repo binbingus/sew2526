@@ -3,6 +3,8 @@
         private $crono;
         private $mysqli;
 
+        public $idp;
+
         function __construct() {
             $this->mysqli = new mysqli("localhost", "DBUSER2025", "DBPSWD2025", "uo288066_DB");
             if ($this->mysqli->connect_errno) {
@@ -17,50 +19,72 @@
         }
 
         /* Iniciar prueba: Inicia el crono y marca que la prueba ha empezado */
-        function iniciarPrueba() {
+        function iniciarPrueba($edad, $genero, $profesion) {
             $this->crono->arrancar();
-            $_SESSION['prueba_iniciada'] = true;
-        }
 
-        public function pruebaIniciada() {
-            return isset($_SESSION['prueba_iniciada']) && $_SESSION['prueba_iniciada'] === true;
+            $stmt = $this->mysqli->prepare(
+                "INSERT INTO Usuarios (profesion, edad, genero)
+                VALUES (?, ?, ?)"
+            );
+            $stmt->bind_param("sis", $profesion, $edad, $genero);
+            $stmt->execute();
+
+            $idu = $this->mysqli->insert_id;
+
+            $stmt->close();
+
+            return $idu;
         }
 
         /* Terminar prueba: detiene cronómetro y guarda respuestas + tiempo */
-        public function terminarPrueba() {
+        public function terminarPrueba($idu, $idd, $tiempo, $valoracion) {
             $this->crono->parar();
             $tiempo = $this->crono->getTiempoSegundos();
 
             // Guardar respuestas en BD
             $stmt = $this->mysqli->prepare(
                 "INSERT INTO Prueba 
-                (id_prueba, id_usuario, id_dispositivo, tiempo, valoracion)
-                VALUES (?, ?, ?)" // dispositivo, tiempo y valoracion
+                (id_usuario, id_dispositivo, tiempo, valoracion)
+                VALUES (?, ?, ?, ?)" // dispositivo, tiempo y valoracion
             );
-            $stmt->bind_param(
-                "iidi", 
-                $usuarioId, 
-                $dispositivoId, 
-                $tiempo, 
-                $respuestas['valoracion']
-            );
+            $stmt->bind_param( "iidd", $idu, $idd, $tiempo, $valoracion );
             $stmt->execute();
-            $resultadoId = $stmt->insert_id;
+
+            $idp = $this->mysqli->insert_id;
+
             $stmt->close();
 
-            // Guardar comentarios del observador si existen
-            if ($comentariosFacilitador) {
-                $stmt2 = $this->mysqli->prepare(
-                    "INSERT INTO Observaciones (id_observacion, id_resultado, comentarios)
-                    VALUES (?)" // comentarios
+            return $idp;
+        }
+
+        public function guardarRespuestas($idp, $preguntas, $respuesstas) {
+            foreach ($preguntas as $index => $pregunta) {
+                $respuesta = $respuesstas[$index] ?? '';
+
+                $stmt1 = $this->mysqli->prepare(
+                    "INSERT INTO Respuesta (id_prueba, pregunta, respuesta)
+                    VALUES (?, ?, ?)" // prueba, pregunta, respuesta
                 );
-                $stmt2->bind_param("is", $resultadoId, $comentariosFacilitador);
+                $stmt1->bind_param("iss", $idp, $pregunta, $respuesta);
+                $stmt1->execute();
+                $stmt1->close();
+            }
+        }
+
+        public function guardarComentarios($idp, $comentarios) {
+            if ($comentarios) {
+                $stmt2 = $this->mysqli->prepare(
+                    "INSERT INTO Observaciones (id_prueba, comentarios)
+                    VALUES (?, ?)" // prueba, comentarios
+                );
+                $stmt2->bind_param("is", $idp, $comentarios);
                 $stmt2->execute();
                 $stmt2->close();
+
             }
 
-            $_SESSION['prueba_iniciada'] = false;
-            return $resultadoId;
+            $_SESSION['guardar_comentarios'] = false;
+            session_destroy();
         }
     }
     ?>
@@ -89,57 +113,7 @@
         <h2>Prueba de usabilidad</h2>
 
         <?php
-        define('CRONO_SILENT', true);
-        require_once("../cronometro.php");
-
-        $prueba = new Prueba();
-        $crono = $_SESSION['crono_prueba'] ?? new Cronometro();
-
-        // Arrancar cronómetro (por ejemplo al iniciar la prueba)
-        if (isset($_POST['iniciar_prueba'])) {
-            $prueba->iniciarPrueba();
-            $_SESSION['prueba_iniciada'] = true;
-        }
-
-        // Parar cronómetro y guardar tiempo (por ejemplo al terminar la prueba)
-        if (isset($_POST['terminar_prueba'])) {
-            $prueba->terminarPrueba();
-            $tiempo = $crono->getTiempoSegundos(); 
-            $_SESSION['mostrar_comentarios'] = true;
-            $_SESSION['prueba_iniciada'] = false;
-        }
-
-        if (isset($_POST['guardar_comentarios'])) {
-            $comentarios = isset($_POST['comentario_facilitador']) ? trim($_POST['comentario_facilitador']) : '';
-            $respuestas = $_SESSION['respuestas_guardadas'] ?? []; // Si guardaste respuestas antes
-            $usuarioId = 1;
-            $dispositivoId = 1;
-            $prueba->terminarPrueba($usuarioId, $dispositivoId, $respuestas, $comentarios);
-
-            // Limpiar sesión
-            unset($_SESSION['mostrar_comentarios'], $_SESSION['respuestas_guardadas']);
-            echo "<p>Comentarios guardados correctamente.</p>";
-        }
-        ?>
-
-        <?php if (!$_SESSION['prueba_iniciada'] && empty($_SESSION['mostrar_comentarios'])): ?>
-            <!-- Formulario inicial para iniciar prueba -->
-            <form method="post">
-                <label for="edad">Edad:</label>
-                <input type="number" name="edad" required/><br/>
-                <label>Género:</label>
-                <input type="radio" name="genero" value="Femenino" required/> Femenino
-                <input type="radio" name="genero" value="Masculino" required/> Masculino
-                <input type="radio" name="genero" value="Otro" required/> Otro<br/>
-                <label for="profesion">Profesión:</label>
-                <input type="text" name="profesion" required/><br/>
-                <input type="submit" name="iniciar_prueba" value="Iniciar Prueba"/>
-            </form>
-
-        <?php elseif ($_SESSION['prueba_iniciada']): ?>
-            <!-- Formulario de la prueba -->
-            <?php
-            $preguntas = [
+        $preguntas = [
                 "¿Qué te parece la navegación del sitio web?",
                 "¿Cómo valoras la velocidad de carga?",
                 "¿El diseño es atractivo visualmente?",
@@ -150,8 +124,95 @@
                 "¿Cómo valoras la interacción con formularios?",
                 "¿El sitio web es accesible en tu dispositivo?",
                 "¿Recomendarías este sitio web a otros?"
-            ];
-            ?>
+            ];  
+
+        define('CRONO_SILENT', true);
+        require_once("../cronometro.php");
+
+        $prueba = new Prueba();
+        $crono = $_SESSION['crono_prueba'] ?? new Cronometro();
+
+        if (!isset($_SESSION['estado_prueba'])) {
+            $_SESSION['estado_prueba'] = 'inicio';
+        }
+
+        // Iniciar prueba
+        if (isset($_POST['iniciar_prueba'])) {
+            $edad = $_POST['edad'];
+            $genero = $_POST['genero'];
+            $profesion = $_POST['profesion'];
+
+            $dispositivo = $_POST['dispositivo'];
+            $_SESSION['dispositivo'] = $dispositivo;    
+
+            $idu = $prueba->iniciarPrueba($edad, $genero, $profesion);
+            $_SESSION['idu'] = $idu;
+
+            $_SESSION['estado_prueba'] = 'ejecucion';
+        }
+
+        // Terminar prueba
+        if (isset($_POST['terminar_prueba'])) {
+            $tiempo = $crono->getTiempoSegundos(); 
+
+            $idu = $_SESSION['idu'];
+            $dispositivo = $_SESSION['dispositivo'] ?? 1;
+            $valoracion = $_POST['valoracion'];
+
+            $idp = $prueba->terminarPrueba($idu, $dispositivo, $tiempo, $valoracion);
+            $_SESSION['idp'] = $idp;
+
+            $respuestas = [];
+            foreach ($preguntas as $index => $texto) {
+                $nombre = 'pregunta'.($index+1);
+                $respuestas[$index] = $_POST[$nombre] ?? '';
+            }
+            $prueba->guardarRespuestas($idp, $preguntas, $respuestas);
+
+            $_SESSION['idp'] = $idp;
+            $_SESSION['estado_prueba'] = 'comentarios';
+        }
+
+        // Guardar comentarios despues de la prueba
+        if (isset($_POST['guardar_comentarios'])) {
+            $comentarios = isset($_POST['comentario']) ? trim($_POST['comentario']) : '';
+
+            $idp = $_SESSION['idp'];
+            $prueba->guardarComentarios($idp, $_POST['comentario']);
+
+            $_SESSION = [];
+            $_SESSION['estado_prueba'] = 'inicio';
+        }
+        ?>
+
+        <?php if ($_SESSION['estado_prueba'] == 'inicio'): ?>
+            <!-- Formulario inicial para iniciar prueba -->
+            <form method="post">
+                <label for="edad">Edad:</label>
+                <input type="number" name="edad" required/><br/>
+
+                <label>Género:</label>
+                <p>
+                    <input type="radio" name="genero" value="Femenino" required/> Femenino
+                    <input type="radio" name="genero" value="Masculino" required/> Masculino
+                    <input type="radio" name="genero" value="Otro" required/> Otro
+                </p>
+                
+
+                <label for="profesion">Profesión:</label>
+                <input type="text" name="profesion" required/><br/>
+
+                <label>Dispositivo:</label>
+                <p>
+                    <input type="radio" name="dispositivo" value="1" required/> Ordenador
+                    <input type="radio" name="dispositivo" value="2" required/> Tablet
+                    <input type="radio" name="dispositivo" value="3" required/> Móvil
+                </p>
+
+                <input type="submit" name="iniciar_prueba" value="Iniciar Prueba"/>
+            </form>
+
+        <?php elseif ($_SESSION['estado_prueba'] == 'ejecucion'): ?>
             <form method="post">
                 <?php foreach($preguntas as $index => $texto): ?>
                     <label for="pregunta<?= $index+1 ?>"><?= $texto ?></label>
@@ -163,15 +224,15 @@
                 <input type="submit" name="terminar_prueba" value="Terminar Prueba"/>
             </form>
 
-        <?php elseif ($_SESSION['mostrar_comentarios']): ?>
+        <?php elseif ($_SESSION['estado_prueba'] == 'comentarios'): ?>
             <!-- Formulario para comentarios después de terminar la prueba -->
             <form method="post">
-                <label for="comentario_usuario">Comentarios adicionales:</label><br/>
-                <textarea name="comentario_usuario" rows="5" cols="50" required></textarea><br/>
+                <label for="comentario">Comentarios adicionales:</label><br/>
+                <textarea name="comentario" rows="5" cols="50" required></textarea><br/>
                 <input type="submit" name="guardar_comentarios" value="Guardar Comentarios"/>
             </form>
         <?php endif; ?>
-
+        
     </main>
 
 </body>
