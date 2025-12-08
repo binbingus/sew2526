@@ -24,13 +24,6 @@ main p {
 }
 
 @media (min-width:0px) and (max-width:799px) {
-    /* E:001 */
-    main {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1vw;
-        margin: 0;
-    }
 
     /* E:002 */
     main article {

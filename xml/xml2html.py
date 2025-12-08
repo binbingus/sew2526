@@ -39,36 +39,7 @@ def main():
     # Crear objeto Html
     html = Html(title="Información del Circuito")
 
-    # Cabecera HTML
-    """
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="author" content="Olga Alonso Grela"/>
-        <meta name="description" content="página principal"/>
-        <meta name="keywords" content="MotoGP, piloto, Raúl Fernández, biografía, equipos, resultados, estadísticas, circuito"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="estilo/estilo.css"/>
-        <link rel="stylesheet" href="estilo/layout.css"/>
-        <link rel="icon" href="multimedia/img/motogp.ico"/> <!-- HTML2: Ejercicio 3: favicon -->
-        <title>MotoGP</title>
-    </head>
-    """
-    html.add_line('<!DOCTYPE html>')
-    html.open_tag("html", 'lang="es"')
-    # Elementos head
-    html.open_tag("head")
-    html.add_line('<meta charset="UTF-8">')
-    html.add_line('<meta name="author" content="Olga Alonso Grela"/>')
-    html.add_line('<meta name="description" content="Información del circuito Autódromo do Algarve"/>')
-    html.add_line('<meta name="keywords" content="MotoGP, circuito, Autódromo do Algarve, Portugal, carrera, resultados, ganador"/>')
-    html.add_line('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
-    html.add_line(f'<link rel="stylesheet" href="estilo/estilo.css">')
-    html.add_line(f'<link rel="stylesheet" href="estilo/layout.css">')
-    html.add_line('<link rel="icon" href="multimedia/img/motogp.ico"/>')
-    html.add_line(f'<title>{html.title}</title>')
-    html.close_tag("head")
-
-    html.open_tag("body")
+    # Generar lo que estaría dentro del body
 
     # Información general
     info_items = [
@@ -153,9 +124,6 @@ def main():
             html.add_line(f"<li>{piloto.text}</li>")
         html.close_tag("ol")
         html.close_tag("section")
-
-    html.close_tag("body")
-    html.close_tag("html")
 
     # Guardar HTML
     with open(html_file, "w", encoding="utf-8") as f:

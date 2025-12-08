@@ -166,10 +166,6 @@ form input[type="radio"] {
     width: 100%;
 }
 
-form input[type="radio"] {
-    width: auto;
-}
-
 form input[type="text"],
 form input[type="number"] {
     border: 0.1rem solid #ccc;
