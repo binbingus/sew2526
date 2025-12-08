@@ -22,11 +22,11 @@
     </referencias>
 
     <fotos>
-        <foto>../../sew2526/multimedia/img/circuito_sectores.webp</foto>
+        <foto alt="Tramos del circuito">multimedia/img/circuito_sectores.webp</foto>
     </fotos>
 
     <videos>
-        <video>../multimedia/video/circuito.mp4</video>
+        <video title="Análisis del circuito en vista de pájaro">multimedia/video/circuito.mp4</video>
     </videos>
 
     <puntoOrigen>

@@ -109,25 +109,39 @@
 	</xs:element>
 	<xs:element name="referencia" type="xs:string" />
 
-    <!-- FOTOS -->
+	<!-- FOTOS -->
 	<xs:element name="fotos">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="5" ref="foto" />                   
+				<xs:element minOccurs="1" maxOccurs="5" name="foto">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="alt" type="xs:string" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>                  
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="foto" type="xs:string" />
 
-    <!-- VIDEOS -->
+	<!-- VIDEOS -->
 	<xs:element name="videos">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="3" ref="video" />                  
+				<xs:element minOccurs="1" maxOccurs="3" name="video">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="title" type="xs:string" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>                  
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="video" type="xs:string" />
 
     <!-- PUNTOS Y TRAMOS DEL CIRCUITO -->
 	<xs:element name="puntoOrigen">
