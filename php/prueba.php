@@ -119,10 +119,10 @@
                 "¿Cómo se llama el circuito?",
                 "¿Va a llover en los días previos a la carrera?",
                 "¿Cuánto tiempo hizo el ganador de la carrera?",
-                "¿Está el ganador de la carrera entre los tres primeros en la clasificación general?",
+                "¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?",
                 "¿Quién es el principal patrocinador de la carrera?",
                 "¿En qué localidad se encuentra el circuito?",
-                "¿Cuántos habitantes tiene la localidad?",
+                "¿Cuántos habitantes tiene dicha localidad?",
                 "Escribe alguna de las marcas que aparecen en el juego de memoria."
             ];  
 
