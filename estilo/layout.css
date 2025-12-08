@@ -114,6 +114,7 @@ main section article a {
 }
 
 /* FORM */
+/* E:001 */
 form {
     display: flex;
     flex-direction: column;
@@ -121,6 +122,8 @@ form {
     padding: 2rem;
 }
 
+/* E:002 */
+/* E:012 */
 form label,
 form input[type="text"],
 form input[type="number"],
@@ -129,20 +132,35 @@ form input[type="radio"] {
     margin-bottom: 1rem;
 }
 
+/* E:012 */
 form input[type="radio"] {
     margin-right: 1rem;
 }
 
+/* E:012 */
 form input[type="text"],
 form input[type="number"] {
     box-sizing: border-box;
     padding: 0.5rem;
 }
 
+/* E:012 */
 form input[type="submit"] {
     display: block;
     padding: 0.75rem;
     margin: 1rem;
+}
+
+/* E:002 */
+main label {
+    display: block;       /* Cada label ocupa toda la línea */
+    margin-bottom: 1em;   /* Espacio entre labels */
+}
+
+/* E:003 */
+main label input {
+    display: block;       /* El input aparece debajo del texto del label */
+    margin-top: 0.3em;    /* Separación del texto */
 }
 
 /* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
@@ -219,6 +237,7 @@ form input[type="submit"] {
         padding: 1%;
     }
 
+    /* E:00 */
     main > div {
         max-height: 60vh;
     }

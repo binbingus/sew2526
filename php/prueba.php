@@ -221,6 +221,7 @@
 
                 <label for="valoracion">Valoración del Sitio Web (0-10):</label>
                 <input type="number" name="valoracion" min="0" max="10" required/><br/>
+
                 <input type="submit" name="terminar_prueba" value="Terminar Prueba"/>
             </form>
 
