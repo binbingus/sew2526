@@ -20,14 +20,18 @@
             private $documento;
             public $ganador;
             public $tiempoGanador;
+            public $tresPrimeros;
 
             public function __construct() {
                 $this->documento = "xml/circuitoEsquema.xml";
                 $this->ganador = "Sin definir";
                 $this->tiempoGanador = "00:00:00";
+                $this->tresPrimeros = [];
             }
 
             public function consultar() {
+                $this->tresPrimeros = [];
+
                 $datos = file_get_contents($this->documento);
                 if ($datos == null) {
                     echo "<h3>Error en el archivo XML recibido";
@@ -51,6 +55,11 @@
                 $min = floor($totalSegundos / 60);
                 $seg = $totalSegundos % 60;
                 $this->tiempoGanador = sprintf("%02d:%04.1f", $min, $seg);
+
+                // Nombres tres primeros clasificados
+                foreach ($xml->clasificacionMundial->piloto as $piloto) {
+                    $this->tresPrimeros[] = (string)$piloto;         
+                }
             }
         }
     ?>
@@ -95,6 +104,15 @@
                     <li>Ganador: {$clasificacion->ganador} </li>
                     <li>Tiempo: {$clasificacion->tiempoGanador}</li>
                 </ul>
+            ";
+
+            echo "
+                <h3>Clasificación Mundial</h3>
+                <ol>
+                    <li>{$clasificacion->tresPrimeros[0]}</li>
+                    <li>{$clasificacion->tresPrimeros[1]}</li>
+                    <li>{$clasificacion->tresPrimeros[2]}</li>
+                </ol>
             ";
         ?>
     </main>

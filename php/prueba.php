@@ -114,16 +114,16 @@
 
         <?php
         $preguntas = [
-                "¿Qué te parece la navegación del sitio web?",
-                "¿Cómo valoras la velocidad de carga?",
-                "¿El diseño es atractivo visualmente?",
-                "¿La información es fácil de encontrar?",
-                "¿El contenido es claro y comprensible?",
-                "¿Te resulta intuitivo el menú de navegación?",
-                "¿Qué mejorarías en la interfaz?",
-                "¿Cómo valoras la interacción con formularios?",
-                "¿El sitio web es accesible en tu dispositivo?",
-                "¿Recomendarías este sitio web a otros?"
+                "¿Cuánto pesa el piloto?",
+                "¿Cómo se llama el circuito?",
+                "¿Va a llover en los días previos a la carrera?",
+                "¿Cuánto tiempo hizo el ganador de la carrera?",
+                "¿Está el ganador de la carrera entre los tres primeros en la clasificación general?",
+                "¿Quién es el principal patrocinador de la carrera?",
+                "¿En qué localidad se encuentra el circuito?",
+                "¿?",
+                "¿?",
+                "¿?"
             ];  
 
         define('CRONO_SILENT', true);
