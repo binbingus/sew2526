@@ -115,15 +115,15 @@
         <?php
         $preguntas = [
                 "¿Cuánto pesa el piloto?",
+                "¿Cuántos puntos ha conseguido el piloto?",
                 "¿Cómo se llama el circuito?",
                 "¿Va a llover en los días previos a la carrera?",
                 "¿Cuánto tiempo hizo el ganador de la carrera?",
                 "¿Está el ganador de la carrera entre los tres primeros en la clasificación general?",
                 "¿Quién es el principal patrocinador de la carrera?",
                 "¿En qué localidad se encuentra el circuito?",
-                "¿?",
-                "¿?",
-                "¿?"
+                "¿Cuántos habitantes tiene la localidad?",
+                "Escribe alguna de las marcas que aparecen en el juego de memoria."
             ];  
 
         define('CRONO_SILENT', true);
