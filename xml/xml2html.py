@@ -28,7 +28,7 @@ def main():
     # Archivos
     base_dir = os.path.dirname(os.path.abspath(__file__))
     xml_file = os.path.join(base_dir, "circuitoEsquema.xml")
-    html_file = os.path.join("./xml/infoCircuito.html")
+    html_file = os.path.join(base_dir, "infoCircuito.html")
 
     NS = {'c': 'http://www.uniovi.es'}
 
@@ -60,7 +60,7 @@ def main():
     html.add_line('<meta charset="UTF-8">')
     html.add_line('<meta name="author" content="Olga Alonso Grela"/>')
     html.add_line('<meta name="description" content="Información del circuito Autódromo do Algarve"/>')
-    html.add_line('<meta name="keywords" content="MotoGP, circuito, Autódromo do Algarve, Portugal, carrera, resultados, gaandor"/>')
+    html.add_line('<meta name="keywords" content="MotoGP, circuito, Autódromo do Algarve, Portugal, carrera, resultados, ganador"/>')
     html.add_line('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
     html.add_line(f'<link rel="stylesheet" href="estilo/estilo.css">')
     html.add_line(f'<link rel="stylesheet" href="estilo/layout.css">')
