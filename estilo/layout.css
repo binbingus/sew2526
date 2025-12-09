@@ -196,7 +196,7 @@ main label input {
 }
 
 /* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
-@media (min-width:320px) and (max-width:799px) {
+@media (min-width:0px) and (max-width:799px) {
     /* E:001 */
     header {
         flex-direction: column;
