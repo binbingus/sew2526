@@ -137,7 +137,7 @@
             }
         
             // 1. Dispositivos
-            $ficherod = fopen("uo288066_db_dispoditivos.csv", "w");
+            $ficherod = fopen("uo288066_db_dispositivos.csv", "w");
             fputcsv($ficherod, ["id_dispositivo","nombre_dispositivo"]);
             fputcsv($fichero, ["id_dispositivo","nombre_dispositivo"]);
             $resultado = $this->mysqli->query("SELECT id_dispositivo, nombre_dispositivo FROM Dispositivos");
