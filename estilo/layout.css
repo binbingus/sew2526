@@ -167,6 +167,7 @@ main label input {
 @media (min-width:320px) and (max-width:799px) {
     /* E:001 */
     header {
+        flex-direction: column;
         position: relative;
     }
 
@@ -186,6 +187,8 @@ main label input {
 
     /* E:002 */
     header nav {
+        display: none;
+        flex-direction: column;
         position: relative;        /* se posiciona relativo al header */
         top: 100%;                 /* justo debajo del header */
         left: 0;
