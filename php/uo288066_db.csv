@@ -3,32 +3,32 @@ id_dispositivo,nombre_dispositivo
 2,tableta
 3,telefono
 id_observacion,id_prueba,comentarios
-1,1,.
-2,2,"noticias en seccion de ayuda"
+3,3,"prueba en clase"
+4,4,"prueba en clase"
 id_resultado,id_usuario,id_dispositivo,tiempo,valoracion
-1,1,1,55,10
-2,2,2,8,10
+3,3,1,24,10
+4,4,2,59,10
 id_usuario,profesion,edad,genero
-1,estudiante,22,Masculino
-2,estudiante,22,Masculino
+3,estudiante,22,Masculino
+4,estudiante,22,Masculino
 id_respuesta,id_prueba,pregunta,respuesta
-1,1,"¿Cuánto pesa el piloto?",65kg
-2,1,"¿Cuántos puntos ha conseguido el piloto?",95
-3,1,"¿Qué es un paddock?","Zona reservada en los circuitos donde se instalan los equipos con sus motos, camiones y hospitalities."
-4,1,"¿Va a llover en los días previos a la carrera?",no
-5,1,"¿Cuánto tiempo hizo el ganador de la carrera?",40:52.0
-6,1,"¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?","Marc Márquez"
-7,1,"¿Quién es el principal patrocinador de la carrera?",-
-8,1,"¿En qué localidad se encuentra el circuito?",portugal
-9,1,"¿Cuántos habitantes tiene dicha localidad?","59867 "
-10,1,"Escribe alguna de las marcas que aparecen en el juego de memoria.",Ducati
-11,2,"¿Cuánto pesa el piloto?",65kg
-12,2,"¿Cuántos puntos ha conseguido el piloto?",95
-13,2,"¿Qué es un paddock?","Zona reservada en los circuitos donde se instalan los equipos con sus motos, camiones y hospitalities."
-14,2,"¿Va a llover en los días previos a la carrera?",no
-15,2,"¿Cuánto tiempo hizo el ganador de la carrera?",-
-16,2,"¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?",-
-17,2,"Busca una noticia sobre Moto GP y escribe su titular.",si
-18,2,"¿En qué localidad se encuentra el circuito?",portugal
-19,2,"¿Cuántos habitantes tiene dicha localidad?","59867 "
-20,2,"Escribe alguna de las marcas que aparecen en el juego de memoria.",Ducati
+21,3,"¿Cuánto pesa el piloto?","65 kg"
+22,3,"¿Cuántos puntos ha conseguido el piloto?",95
+23,3,"¿Qué es un paddock?","Zona reservada en los circuitos donde se instalan los equipos con sus motos, camiones y hospitalities."
+24,3,"¿Va a llover en los días previos a la carrera?",no
+25,3,"¿Cuánto tiempo hizo el ganador de la carrera?",40:52.0
+26,3,"¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?",no
+27,3,"Busca una noticia sobre Moto GP y escribe su titular.","MotoGP: Victorias, podios, poles y VR"
+28,3,"¿En qué localidad se encuentra el circuito?",Portimão
+29,3,"¿Cuántos habitantes tiene dicha localidad?",59867
+30,3,"Escribe alguna de las marcas que aparecen en el juego de memoria.","aprilia, yamaha, atm"
+31,4,"¿Cuánto pesa el piloto?","65 kg"
+32,4,"¿Cuántos puntos ha conseguido el piloto?",95
+33,4,"¿Qué es un paddock?","zona reservada en los circuitos ..."
+34,4,"¿Va a llover en los días previos a la carrera?",no
+35,4,"¿Cuánto tiempo hizo el ganador de la carrera?",40:52.0
+36,4,"¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?",no
+37,4,"Busca una noticia sobre Moto GP y escribe su titular.","Clasificación final Mundial MotoGP 2025"
+38,4,"¿En qué localidad se encuentra el circuito?",Portimao
+39,4,"¿Cuántos habitantes tiene dicha localidad?",59867
+40,4,"Escribe alguna de las marcas que aparecen en el juego de memoria.","ducati, honda, yamaha"
