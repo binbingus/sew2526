@@ -41,3 +41,14 @@ CREATE TABLE Respuesta (
     respuesta    TEXT NOT NULL,
     FOREIGN KEY (id_prueba) REFERENCES Prueba(id_prueba) ON DELETE CASCADE
 );
+
+-- Desactivar temporalmente las claves foráneas
+SET FOREIGN_KEY_CHECKS = 0;
+
+TRUNCATE TABLE Respuesta;
+TRUNCATE TABLE Observaciones;
+TRUNCATE TABLE Prueba;
+TRUNCATE TABLE Usuarios;
+
+-- Reactivar las claves foráneas
+SET FOREIGN_KEY_CHECKS = 1;

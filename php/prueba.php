@@ -187,7 +187,7 @@
 
         <?php if ($_SESSION['estado_prueba'] == 'inicio'): ?>
             <!-- Formulario inicial para iniciar prueba -->
-            <form method="post">
+            <form method="post" autocomplete="off">
                 <label for="edad">Edad:</label>
                 <input type="number" name="edad" required/><br/>
 
@@ -213,7 +213,7 @@
             </form>
 
         <?php elseif ($_SESSION['estado_prueba'] == 'ejecucion'): ?>
-            <form method="post">
+            <form method="post" autocomplete="off">
                 <?php foreach($preguntas as $index => $texto): ?>
                     <label for="pregunta<?= $index+1 ?>"><?= $texto ?></label>
                     <input type="text" name="pregunta<?= $index+1 ?>" required/><br/>
@@ -227,7 +227,7 @@
 
         <?php elseif ($_SESSION['estado_prueba'] == 'comentarios'): ?>
             <!-- Formulario para comentarios después de terminar la prueba -->
-            <form method="post">
+            <form method="post" autocomplete="off">
                 <label for="comentario">Comentarios adicionales:</label><br/>
                 <textarea name="comentario" rows="5" cols="50" required></textarea><br/>
                 <input type="submit" name="guardar_comentarios" value="Guardar Comentarios"/>
