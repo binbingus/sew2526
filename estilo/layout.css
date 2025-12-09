@@ -298,4 +298,12 @@ main label input {
         margin-bottom: 0;
     }
 
+    ul, ol {
+        overflow-x: hidden;
+        max-width: 100%;  
+    }
+
+    ul a {
+        word-break: break-word;
+    }
 }
