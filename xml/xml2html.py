@@ -81,7 +81,7 @@ def main():
         html.open_tag("section")
         html.add_line("<h3>Fotos</h3>")
         for foto in fotos:
-            html.add_line(f'<img src="{foto.text}" alt="{foto.get("alt")}" >')
+            html.add_line(f'<img src="{base_dir + foto.text}" alt="{foto.get("alt")}" >')
         html.close_tag("section")
 
     # Videos
@@ -90,7 +90,7 @@ def main():
         html.open_tag("section")
         html.add_line("<h3>Videos</h3>")
         for video in videos:
-            html.add_line(f'<video src="{video.text}" title="{video.get("title")}" controls></video>')
+            html.add_line(f'<video src="{base_dir + video.text}" title="{video.get("title")}" controls></video>')
         html.close_tag("section")
 
     # Vencedor
