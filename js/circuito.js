@@ -46,7 +46,7 @@ class Circuito {
             clon = node.cloneNode(false); // clon superficial
             node.childNodes.forEach(child => {
                 if (child.nodeType === Node.ELEMENT_NODE) {
-                    insertarNodo(child, clon, esHeader);
+                    insertarNodo(child, clon);
                 } else if (child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== "") {
                     clon.appendChild(document.createTextNode(child.textContent));
                 }
