@@ -1,6 +1,6 @@
 <?php
     class Prueba {
-        private $crono;
+        public $crono;
         private $mysqli;
 
         public $idp;
@@ -130,7 +130,7 @@
         require_once("../cronometro.php");
 
         $prueba = new Prueba();
-        $crono = $_SESSION['crono_prueba'] ?? new Cronometro();
+        $prueba->crono = $_SESSION['crono_prueba'] ?? new Cronometro();
 
         if (!isset($_SESSION['estado_prueba'])) {
             $_SESSION['estado_prueba'] = 'inicio';

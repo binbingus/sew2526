@@ -1,3 +1,4 @@
-id_usuario,profesion,edad,genero
-1,"Estudiante informatica",22,Masculino
-2,"Estudiante informatica",22,Masculino
+"id_usuario","profesion","edad","genero"
+"1","Estudiante informatica","22","Masculino"
+"2","Estudiante informatica","22","Masculino"
+"3","ADMINISTRATIVO","57","Femenino"
