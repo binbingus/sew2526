@@ -115,7 +115,7 @@ class Ciudad {
 
         // Headers
         const filaCabecera = document.createElement("tr");
-        ["Hora","Temp","Sensación","Lluvia","Humedad","Viento","Dir. Viento"].forEach(texto => {
+        ["Hora","Temp","Sens. Térmica","Lluvia","Humedad","Viento","Dir. Viento"].forEach(texto => {
             const th = document.createElement("th");
             th.scope = "col";
             th.textContent = texto;
@@ -234,7 +234,7 @@ class Ciudad {
 
         const thead = document.createElement("thead");
         const filaCabeza = document.createElement("tr");
-        ["Día", "Temperatura (°C)", "Lluvia (mm)", "Humedad (%)", "Viento (km/h)"].forEach(texto => {
+        ["Día", "Temp (°C)", "Lluvia (mm)", "Humedad (%)", "Viento (km/h)"].forEach(texto => {
             const th = document.createElement("th");
             th.scope = "col";
             th.textContent = texto;

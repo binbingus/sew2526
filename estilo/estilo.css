@@ -192,3 +192,11 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     background-color: #000099;
 }
+
+/* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
+@media (min-width:320px) and (max-width:799px) {
+    /* E:002 */
+    table th, table td {
+        font-size: .8em;
+    }
+}

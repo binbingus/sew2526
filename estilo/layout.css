@@ -260,11 +260,6 @@ main label input {
     }
 
     /* E:002 */
-    table th, table td {
-        font-size: calc(100vmax/70);
-    }
-
-    /* E:002 */
     body section {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
