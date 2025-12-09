@@ -40,9 +40,15 @@ h2, h3, h4, h5, h6, p {
 }
 
 /* E:001 */
-img, video, audio {
+img, video {
     max-width: 100%;
     height: auto;
+}
+
+/* E:001 */
+audio {
+    min-width: 100%;
+    height: 5vmax;
 }
 
 /* E:001 */
@@ -113,42 +119,68 @@ main section article a {
     text-align: center;
 }
 
-/* FORM */
 /* E:001 */
+aside {
+    display: block;
+    padding: 1vmax;
+    margin: 1vmax 0;
+}
+
+/* FORM */
 form {
     display: flex;
     flex-direction: column;
-    margin: 2rem auto;      
-    padding: 2rem;
+    margin: 2vmax auto;
+    padding: 2vmax;
+    max-width: 50vmax;
+    background-color: #f7f7f7;
+    border-radius: 1vmax;
+    box-shadow: 0 0.25vmax 0.5vmax rgba(0,0,0,0.1);
 }
 
-/* E:002 */
-/* E:012 */
-form label,
-form input[type="text"],
-form input[type="number"],
-form input[type="radio"] {
-    display: block;
-    margin-bottom: 1rem;
-}
-
-/* E:012 */
-form input[type="radio"] {
-    margin-right: 1rem;
-}
-
-/* E:012 */
 form input[type="text"],
 form input[type="number"] {
+    display: block;
+    width: 100%;
+    padding: 0.8vmax;
+    margin-bottom: 1vmax;
     box-sizing: border-box;
-    padding: 0.5rem;
+    border: 0.1vmax solid #ccc;
+    border-radius: 0.5vmax;
 }
 
-/* E:012 */
+form p {
+    display: grid;
+    grid-template-columns: 1fr auto; /* texto a la izquierda, radio a la derecha */
+    row-gap: 0.5vmax;                /* separación entre filas */
+    margin: 0vmax 15vmax 2vmax 15vmax;
+}
+
+form p label {
+    display: contents;
+}
+
+form p label input[type="radio"] {
+    justify-self: start;  
+    align-self: center; 
+    margin-right: 20vmax;
+}
+
 form input[type="submit"] {
     display: block;
-    padding: 0.75rem;
-    margin: 1rem;
+    width: 100%;
+    padding: 1vmax;
+    background-color: #0000FA;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5vmax;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #000099;
 }
 
 /* E:002 */
@@ -238,6 +270,10 @@ main label input {
         grid-template-columns: repeat(1, 1fr);
         gap: 1em;
         padding: 1%;
+    }
+
+    main {
+        margin: 0 2vmax;
     }
 
     /* E:00 */

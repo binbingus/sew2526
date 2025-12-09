@@ -193,9 +193,9 @@
 
                 <label>Género:</label>
                 <p>
-                    <input type="radio" name="genero" value="Femenino" required/> Femenino
-                    <input type="radio" name="genero" value="Masculino" required/> Masculino
-                    <input type="radio" name="genero" value="Otro" required/> Otro
+                    <label>Femenino<input type="radio" name="genero" value="Femenino" required/></label>
+                    <label>Masculino<input type="radio" name="genero" value="Masculino" required/> </label>
+                    <label>Otro<input type="radio" name="genero" value="Otro" required/> </label>
                 </p>
                 
 
@@ -204,9 +204,9 @@
 
                 <label>Dispositivo:</label>
                 <p>
-                    <input type="radio" name="dispositivo" value="1" required/> Ordenador
-                    <input type="radio" name="dispositivo" value="2" required/> Tablet
-                    <input type="radio" name="dispositivo" value="3" required/> Móvil
+                    <label>Ordenador<input type="radio" name="dispositivo" value="1" required/> </label>
+                    <label>Tablet<input type="radio" name="dispositivo" value="2" required/> </label>
+                    <label>Móvil<input type="radio" name="dispositivo" value="3" required/></label>
                 </p>
 
                 <input type="submit" name="iniciar_prueba" value="Iniciar Prueba"/>

@@ -151,6 +151,12 @@ body section article {
     border-radius: 1em;
 }
 
+/* E:001 */
+aside {
+    border: 0.3vmax solid rgb(200, 200, 200); 
+    border-radius: 1rem;
+}
+
 /* FORM */
 form {
     max-width: 50rem;      
