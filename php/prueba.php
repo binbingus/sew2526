@@ -116,7 +116,7 @@
         $preguntas = [
                 "¿Cuánto pesa el piloto?",
                 "¿Cuántos puntos ha conseguido el piloto?",
-                "¿Cómo se llama el circuito?",
+                "¿Qué es un paddock?",
                 "¿Va a llover en los días previos a la carrera?",
                 "¿Cuánto tiempo hizo el ganador de la carrera?",
                 "¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?",
