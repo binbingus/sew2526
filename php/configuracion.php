@@ -137,39 +137,60 @@
             }
         
             // 1. Dispositivos
+            $ficherod = fopen("uo288066_db_dispoditivos.csv", "w");
+            fputcsv($ficherod, ["id_dispositivo","nombre_dispositivo"]);
             fputcsv($fichero, ["id_dispositivo","nombre_dispositivo"]);
             $resultado = $this->mysqli->query("SELECT id_dispositivo, nombre_dispositivo FROM Dispositivos");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
+                fputcsv($ficherod, $fila);
             }
+            fclose($ficherod);
         
             // 2. Observaciones
+            $ficheroo = fopen("uo288066_db_observaciones.csv", "w");
+            fputcsv($ficheroo,["id_observacion","id_prueba","comentarios"]);
             fputcsv($fichero, ["id_observacion","id_prueba","comentarios"]);
             $resultado = $this->mysqli->query("SELECT id_observacion, id_prueba, comentarios FROM Observaciones");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
+                fputcsv($ficheroo, $fila);
             }
+            fclose($ficheroo);
         
             // 3. Resultados
+            $ficheror = fopen("uo288066_db_resultados.csv", "w");
+            fputcsv($ficheror, ["id_resultado","id_usuario","id_dispositivo","tiempo", "valoracion"]);
             fputcsv($fichero, ["id_resultado","id_usuario","id_dispositivo","tiempo", "valoracion"]);
             $resultado = $this->mysqli->query("SELECT id_prueba, id_usuario, id_dispositivo, tiempo, valoracion FROM Prueba");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
+                fputcsv($ficheror, $fila);
             }
+            fclose($ficheror);
         
             // 4. Usuarios
+            $ficherou = fopen("uo288066_db_usuarios.csv", "w");
+            fputcsv($ficherou, ["id_usuario","profesion","edad","genero"]);
             fputcsv($fichero, ["id_usuario","profesion","edad","genero"]);
             $resultado = $this->mysqli->query("SELECT id_usuario, profesion, edad, genero pericia_informatica FROM Usuarios");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
+                fputcsv($ficherou, $fila);
             }
+            fclose($ficherou);
 
             // 5. Respuestas
+            $ficherores = fopen("uo288066_db_respuestas.csv", "w");
+            fputcsv($ficherores, ["id_respuesta","id_prueba","pregunta","respuesta"]);
             fputcsv($fichero, ["id_respuesta","id_prueba","pregunta","respuesta"]);
             $resultado = $this->mysqli->query("SELECT id_respuesta, id_prueba, pregunta, respuesta FROM Respuesta");
             while ($fila = $resultado->fetch_assoc()) {
                 fputcsv($fichero, $fila);
+                fputcsv($ficherores, $fila);
+                
             }
+            fclose($ficherores);
         
             fclose($fichero);
         

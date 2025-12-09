@@ -1,0 +1,21 @@
+id_respuesta,id_prueba,pregunta,respuesta
+1,1,"¿Cuánto pesa el piloto?","65 kg"
+2,1,"¿Cuántos puntos ha conseguido el piloto?",95
+3,1,"¿Qué es un paddock?","Zona reservada en los circuitos donde se instalan los equipos con sus motos, camiones y hospitalities."
+4,1,"¿Va a llover en los días previos a la carrera?",no
+5,1,"¿Cuánto tiempo hizo el ganador de la carrera?",40:52.0
+6,1,"¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?",no
+7,1,"Busca una noticia sobre Moto GP y escribe su titular.","Clasificación final Mundial MotoGP 2025"
+8,1,"¿En qué localidad se encuentra el circuito?",Portimao
+9,1,"¿Cuántos habitantes tiene dicha localidad?",59867
+10,1,"Escribe alguna de las marcas que aparecen en el juego de memoria.","ktm, ducati, yamaha"
+11,2,"¿Cuánto pesa el piloto?",65kg
+12,2,"¿Cuántos puntos ha conseguido el piloto?",95
+13,2,"¿Qué es un paddock?","zona reservada en los circuitos donde se instalan los equipos con sus motos, camiones y hospitalities"
+14,2,"¿Va a llover en los días previos a la carrera?",no
+15,2,"¿Cuánto tiempo hizo el ganador de la carrera?",40:52.0
+16,2,"¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?",no
+17,2,"Busca una noticia sobre Moto GP y escribe su titular.","motogp en directo"
+18,2,"¿En qué localidad se encuentra el circuito?",portimao
+19,2,"¿Cuántos habitantes tiene dicha localidad?",59867
+20,2,"Escribe alguna de las marcas que aparecen en el juego de memoria.","aprilia, honda, ktm, yamaha"
