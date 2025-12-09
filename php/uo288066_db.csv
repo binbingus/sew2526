@@ -3,6 +3,32 @@ id_dispositivo,nombre_dispositivo
 2,tableta
 3,telefono
 id_observacion,id_prueba,comentarios
+1,1,.
+2,2,"noticias en seccion de ayuda"
 id_resultado,id_usuario,id_dispositivo,tiempo,valoracion
+1,1,1,55,10
+2,2,2,8,10
 id_usuario,profesion,edad,genero
+1,estudiante,22,Masculino
+2,estudiante,22,Masculino
 id_respuesta,id_prueba,pregunta,respuesta
+1,1,"¿Cuánto pesa el piloto?",65kg
+2,1,"¿Cuántos puntos ha conseguido el piloto?",95
+3,1,"¿Qué es un paddock?","Zona reservada en los circuitos donde se instalan los equipos con sus motos, camiones y hospitalities."
+4,1,"¿Va a llover en los días previos a la carrera?",no
+5,1,"¿Cuánto tiempo hizo el ganador de la carrera?",40:52.0
+6,1,"¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?","Marc Márquez"
+7,1,"¿Quién es el principal patrocinador de la carrera?",-
+8,1,"¿En qué localidad se encuentra el circuito?",portugal
+9,1,"¿Cuántos habitantes tiene dicha localidad?","59867 "
+10,1,"Escribe alguna de las marcas que aparecen en el juego de memoria.",Ducati
+11,2,"¿Cuánto pesa el piloto?",65kg
+12,2,"¿Cuántos puntos ha conseguido el piloto?",95
+13,2,"¿Qué es un paddock?","Zona reservada en los circuitos donde se instalan los equipos con sus motos, camiones y hospitalities."
+14,2,"¿Va a llover en los días previos a la carrera?",no
+15,2,"¿Cuánto tiempo hizo el ganador de la carrera?",-
+16,2,"¿Está el ganador de la carrera entre los tres primeros en la clasificación mundial?",-
+17,2,"Busca una noticia sobre Moto GP y escribe su titular.",si
+18,2,"¿En qué localidad se encuentra el circuito?",portugal
+19,2,"¿Cuántos habitantes tiene dicha localidad?","59867 "
+20,2,"Escribe alguna de las marcas que aparecen en el juego de memoria.",Ducati
