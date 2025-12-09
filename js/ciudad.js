@@ -107,7 +107,7 @@ class Ciudad {
         // Fila con salida y puesta del sol antes de los headers
         const filaSol = document.createElement("tr");
         const tdSol = document.createElement("td");
-        tdSol.colSpan = 7;
+        tdSol.colSpan = 6;
         tdSol.style.fontWeight = "bold";
         tdSol.textContent = `Salida del sol: ${this.#jsonCarrera.diarios.salidaSol.split("T")[1]}, Puesta del sol: ${this.#jsonCarrera.diarios.puestaSol.split("T")[1]}`;
         filaSol.appendChild(tdSol);
@@ -115,7 +115,7 @@ class Ciudad {
 
         // Headers
         const filaCabecera = document.createElement("tr");
-        ["Hora","Temp","Sens. Térmica","Lluvia","Humedad","Viento","Dir. Viento"].forEach(texto => {
+        ["Hora","Temp","Sens. Térmica","Lluvia","Humedad","Viento"].forEach(texto => {
             const th = document.createElement("th");
             th.scope = "col";
             th.textContent = texto;
@@ -137,8 +137,8 @@ class Ciudad {
             h.sensacionTermica + "°C",
             h.lluvia + " mm",
             h.humedad + "%",
-            h.vientoVelocidad + " km/h",
-            h.vientoDireccion + "°"].forEach(valor => {
+            h.vientoVelocidad + " km/h - " + h.vientoDireccion + "°"
+            ].forEach(valor => {
                 const td = document.createElement("td");
                 td.textContent = valor;
                 fila.appendChild(td);
