@@ -211,7 +211,7 @@ main label input {
     header {
         flex-direction: column;
         position: relative;
-        padding: 0 2em;
+        padding: 1em 1em;
     }
 
     /* E:002 */
