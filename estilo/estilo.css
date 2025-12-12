@@ -25,6 +25,7 @@ body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-color: rgb(231, 229, 229);
     color: black;
+    font-size: 1.8em;
 }
 
 h1 {
@@ -46,7 +47,6 @@ header a {
 /* E:002 */
 header > button {
     display: none;
-    font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -66,7 +66,7 @@ header nav a:hover{
 
 /* E:002 */
 header nav {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 /* HTML-CSS 3: ej3: Migas -> Destacar el último término y tamaño de letra más pequeño */
