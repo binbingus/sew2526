@@ -25,14 +25,14 @@ body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-color: rgb(231, 229, 229);
     color: black;
-    font-size: 1.2rem;
+    font-size: 1.2vmax;
 }
 
 /* E: 001 */
 header {
     background-color: black;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.3vmax;
 }
 
 /* E:002 */
@@ -63,7 +63,7 @@ header nav a:hover{
 
 /* E:002 */
 header nav {
-    font-size: 1.5rem;
+    font-size: 1.5vmax;
 }
 
 /* E:013 */
@@ -204,14 +204,14 @@ form input[type="submit"]:hover {
 @media (min-width:0px) and (max-width:799px) {
     /* E:002 */
     table th, table td {
-        font-size: .7em;
+        font-size: 1vmax;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 2vmax;
     }
 
     header > button {
-        font-size: 1.8rem;
+        font-size: 2vmax;
     }
 }
