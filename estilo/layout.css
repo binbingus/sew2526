@@ -39,6 +39,16 @@ h2, h3, h4, h5, h6, p {
     margin: .5vmax;
 }
 
+picture {
+    display: block;
+}
+
+picture img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* E:001 */
 img, video {
     max-width: 100%;
@@ -255,7 +265,6 @@ main label input {
     article h2 + img {
         width: 100%;
         height: auto;
-
     }
 
     /* E:002 */
