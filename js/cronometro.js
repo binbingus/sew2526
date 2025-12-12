@@ -7,9 +7,12 @@ class Cronometro {
     constructor() {
         const botones = document.querySelectorAll("main button");
 
-        botones[0].addEventListener("click", () => this.arrancar());
-        botones[1].addEventListener("click", () => this.parar());
-        botones[2].addEventListener("click", () => this.reiniciar());
+        // en las páginas de juego de memoria y prueba de usabilidad no hay esos botones.
+        if (botones.length == 3) {
+            botones[0].addEventListener("click", () => this.arrancar());
+            botones[1].addEventListener("click", () => this.parar());
+            botones[2].addEventListener("click", () => this.reiniciar());
+        }
     }
 
     arrancar() {
