@@ -47,6 +47,7 @@ header > button {
     background: none;
     border: none;
     cursor: pointer;
+    color: white;
 }
 
 /* HTML-CSS 3: ej2: elemento activo del nav */
