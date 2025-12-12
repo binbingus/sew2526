@@ -27,6 +27,10 @@ body {
     color: black;
 }
 
+h1 {
+    font-size: 3rem;
+}
+
 /* E: 001 */
 header {
     background-color: black;
@@ -41,7 +45,7 @@ header a {
 
 /* E:002 */
 header > button {
-    display: none; /* predeterminado */
+    display: none;
     font-size: 2rem;
     background: none;
     border: none;
@@ -62,13 +66,13 @@ header nav a:hover{
 
 /* E:002 */
 header nav {
-    font-size: 1.3em;
+    font-size: 2rem;
 }
 
 /* HTML-CSS 3: ej3: Migas -> Destacar el último término y tamaño de letra más pequeño */
 /* E:002 */
 header + p {
-    font-size: .7em;
+    font-size: 1em;
 }
 
 /* E:003 */
@@ -201,10 +205,10 @@ form input[type="submit"]:hover {
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     header > button {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 }
