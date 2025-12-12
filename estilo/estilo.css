@@ -204,7 +204,7 @@ form input[type="submit"]:hover {
 @media (min-width:0px) and (max-width:799px) {
     /* E:002 */
     table th, table td {
-        font-size: 1vmax;
+        font-size: 1.3vmax;
     }
 
     h1 {
