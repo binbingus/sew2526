@@ -77,7 +77,7 @@
             <a href="piloto.html" title="Información del piloto">Piloto</a>
             <a href="circuito.html" title="Información del circuito">Circuito</a>
             <a href="meteorologia.html" title="Información de la meteorología en la próxima semana">Meteorologia</a>
-            <a href="clasificaciones.php" title="Ganador de la carrera y clasificación mundial">Clasificaciones</a>
+            <a href="clasificaciones.php" title="Ganador de la carrera y clasificación mundial" class="active">Clasificaciones</a>
             <a href="juegos.html" title="Página de juegos">Juegos</a>
             <a href="ayuda.html" title="Información de ayuda sobre la página">Ayuda</a>
         </nav>

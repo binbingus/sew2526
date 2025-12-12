@@ -9,7 +9,7 @@ body {
 }
 
 /* E:001 */
-main{
+main {
     padding: 1em;
     overflow-x: auto;
     margin: 0 8vmax;
@@ -277,6 +277,7 @@ main label input {
 
     main {
         margin: 0;
+        overflow: hidden;
     }
 
     /* E:00 */
