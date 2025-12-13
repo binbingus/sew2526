@@ -129,6 +129,19 @@ main section article a {
     text-align: center;
 }
 
+/* E:002 */
+main article {
+    overflow: hidden;
+}
+
+/* E:003 */
+main article img {
+    height: 50vh;
+    max-height: 50vh;
+    object-fit: cover;
+    display: block;
+}
+
 /* E:001 */
 aside {
     display: block;
@@ -195,14 +208,14 @@ form input[type="submit"]:hover {
 
 /* E:002 */
 main label {
-    display: block;       /* Cada label ocupa toda la línea */
-    margin-bottom: 1em;   /* Espacio entre labels */
+    display: block;       
+    margin-bottom: 1em;   
 }
 
 /* E:003 */
 main label input {
-    display: block;       /* El input aparece debajo del texto del label */
-    margin-top: 0.3em;    /* Separación del texto */
+    display: block;       
+    margin-top: 0.3em;    
 }
 
 /* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
@@ -231,8 +244,8 @@ main label input {
     header nav {
         display: none;
         flex-direction: column;
-        position: relative;        /* se posiciona relativo al header */
-        top: 100%;                 /* justo debajo del header */
+        position: relative;        
+        top: 100%;                 
         left: 0;
         width: 100%;
         background-color: black;
@@ -276,12 +289,13 @@ main label input {
         padding: 1%;
     }
 
+    /* E:001 */
     main {
         margin: 0;
         overflow: hidden;
     }
 
-    /* E:00 */
+    /* E:002 */
     main > div {
         max-height: 60vh;
     }
@@ -293,27 +307,32 @@ main label input {
     }
 
     /* E:004 */
-    main section article h3{
+    main section article h3 {
         text-align: center;
     }
 
+    /* E:001 */
     ul {
         margin: 0;
     }
 
+    /* E:002 */
     section > p {
         margin-bottom: 0;
     }
 
+    /* E:002 */
     section > h3 {
         margin-bottom: 0;
     }
 
+    /* E:001 */
     ul, ol {
         overflow-x: hidden;
         max-width: 100%;  
     }
 
+    /* E:002 */
     ul a {
         word-break: break-word;
     }
