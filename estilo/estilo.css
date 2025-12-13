@@ -151,6 +151,7 @@ main dd {
 /* E:002 */
 main p {
     text-align: justify;
+    text-indent: 2em;
 }
 
 /* E:002 */
@@ -202,7 +203,7 @@ form input[type="submit"]:hover {
 }
 
 /* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
-@media (min-width:0px) and (max-width:799px) {
+@media (min-width:320pxpx) and (max-width:799px) {
     /* E:002 */
     table th, table td {
         font-size: 1.3vmax;
