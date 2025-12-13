@@ -103,7 +103,7 @@ class Ciudad {
 
         // Caption
         const caption = document.createElement("caption");
-        caption.textContent = `Meteorología de ${this.#nombreCiudad} para ${this.#fechaCarrera}`;
+        caption.textContent = `Meteorología de ${this.#nombreCiudad} para el día de la carrera`;
         tabla.appendChild(caption);
 
         const thead = document.createElement("thead");
