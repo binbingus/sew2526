@@ -68,27 +68,31 @@ class Ciudad {
     #procesarJSONCarrera() {
         if (!this.#jsonCarrera) return;
 
-        // Datos diarios
+        const inicio = "14:00";
+        const fin = "15:30";
+
         const diarios = {
             salidaSol: this.#jsonCarrera.daily.sunrise[0],
             puestaSol: this.#jsonCarrera.daily.sunset[0]
         };
 
-        // Datos horarios
-        const horarios = this.#jsonCarrera.hourly.time.map((hora, i) => ({
-            hora: hora,
-            temperatura: this.#jsonCarrera.hourly.temperature_2m[i],
-            sensacionTermica: this.#jsonCarrera.hourly.apparent_temperature[i],
-            lluvia: this.#jsonCarrera.hourly.precipitation[i],
-            humedad: this.#jsonCarrera.hourly.relativehumidity_2m[i],
-            vientoVelocidad: this.#jsonCarrera.hourly.windspeed_10m[i],
-            vientoDireccion: this.#jsonCarrera.hourly.winddirection_10m[i]
-        }));
+        const horarios = this.#jsonCarrera.hourly.time
+            .map((hora, i) => {
+                const h = hora.split("T")[1];
+                return {
+                    hora: hora,
+                    horaSimple: h,
+                    temperatura: this.#jsonCarrera.hourly.temperature_2m[i],
+                    sensacionTermica: this.#jsonCarrera.hourly.apparent_temperature[i],
+                    lluvia: this.#jsonCarrera.hourly.precipitation[i],
+                    humedad: this.#jsonCarrera.hourly.relativehumidity_2m[i],
+                    vientoVelocidad: this.#jsonCarrera.hourly.windspeed_10m[i],
+                    vientoDireccion: this.#jsonCarrera.hourly.winddirection_10m[i]
+                };
+            })
+            .filter(h => h.horaSimple >= inicio && h.horaSimple <= fin);
 
-        // Guardamos procesado
         this.#jsonCarrera = { diarios, horarios };
-
-        // Mostrar en HTML
         this.#mostrarMeteorologia();
     }
 
