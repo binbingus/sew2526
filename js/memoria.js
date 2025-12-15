@@ -81,7 +81,7 @@ class Memoria {
     }
 
     #cubrirCartas() {
-        // Pone boca abajo las dos cartas volteadas si no son iguales tras un retardo
+        // Pone boca abajo las dos cartas volteadas si no son iguales tras un retardo de 1.5 segundos
         setTimeout(() => {
             this.#primera_carta.dataset.estado = "null";
             this.#segunda_carta.dataset.estado = "null"; 
@@ -99,7 +99,4 @@ class Memoria {
             this.#cubrirCartas();
         }
     }
-
-
-
 }

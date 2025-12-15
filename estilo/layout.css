@@ -129,19 +129,6 @@ main section article a {
     text-align: center;
 }
 
-/* E:002 */
-main article {
-    overflow: hidden;
-}
-
-/* E:003 */
-main article img {
-    height: 50vh;
-    max-height: 50vh;
-    object-fit: cover;
-    display: block;
-}
-
 /* E:001 */
 aside {
     display: block;
