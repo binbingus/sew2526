@@ -206,6 +206,18 @@ form input[type="submit"]:hover {
 /* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
 @media (min-width:320px) and (max-width:799px) {
     /* E:002 */
+    body {
+        font-size: 2vmax;
+    }
+
+    header h1 {
+        font-size: 2.5vmax;
+    }
+
+    header nav {
+        font-size: 2.5vmax;
+    }
+
     table th, table td {
         font-size: 1.3vmax;
     }
@@ -215,6 +227,6 @@ form input[type="submit"]:hover {
     }
 
     header > button {
-        font-size: 2vmax;
+        font-size: 2.5vmax;
     }
 }
