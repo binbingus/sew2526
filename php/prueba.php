@@ -188,53 +188,34 @@
         <?php if ($_SESSION['estado_prueba'] == 'inicio'): ?>
             <!-- Formulario inicial para iniciar prueba -->
             <form method="post" autocomplete="off">
-                <label>
-                    Edad: 
-                    <input type="number" name="edad" required/>
-                </label>
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required/>
 
                 <fieldset>
                     <legend>Género</legend>
+                    <label for="genero_f">Femenino</label>
+                    <input type="radio" id="genero_f" name="genero" value="Femenino" required>
 
-                    <label>
-                        Femenino
-                        <input type="radio" name="genero" value="Femenino" required>
-                    </label>
+                    <label for="genero_m">Masculino</label>
+                    <input type="radio" id="genero_m" name="genero" value="Masculino">
 
-                    <label>
-                        Masculino
-                        <input type="radio" name="genero" value="Masculino">
-                    </label>
-
-                    <label>
-                        Otro
-                        <input type="radio" name="genero" value="Otro">
-                    </label>
+                    <label for="genero_o">Otro</label>
+                    <input type="radio" id="genero_o" name="genero" value="Otro">
                 </fieldset>
 
-                <label>
-                    Profesión: 
-                    <input type="text" name="profesion" required/>
-                </label>
+                <label for="profesion">Profesión:</label>
+                <input type="text" id="profesion" name="profesion" required/>
 
-                <label>Dispositivo:</label>
                 <fieldset>
                     <legend>Dispositivo</legend>
+                    <label for="disp_ordenador">Ordenador</label>
+                    <input type="radio" id="disp_ordenador" name="dispositivo" value="1" required>
 
-                    <label>
-                        Ordenador
-                        <input type="radio" name="dispositivo" value="1" required>
-                    </label>
+                    <label for="disp_tablet">Tablet</label>
+                    <input type="radio" id="disp_tablet" name="dispositivo" value="2">
 
-                    <label>
-                        Tablet
-                        <input type="radio" name="dispositivo" value="2">
-                    </label>
-
-                    <label>
-                        Móvil
-                        <input type="radio" name="dispositivo" value="3">
-                    </label>
+                    <label for="disp_movil">Móvil</label>
+                    <input type="radio" id="disp_movil" name="dispositivo" value="3">
                 </fieldset>
 
                 <input type="submit" name="iniciar_prueba" value="Iniciar Prueba"/>
@@ -244,13 +225,11 @@
             <form method="post" autocomplete="off">
                 <?php foreach($preguntas as $index => $texto): ?>
                     <label for="pregunta<?= $index+1 ?>"><?= $texto ?></label>
-                    <input type="text" name="pregunta<?= $index+1 ?>" required/>
+                    <input type="text" id="pregunta<?= $index+1 ?>" name="pregunta<?= $index+1 ?>" required/>
                 <?php endforeach; ?>
 
-                <label>
-                    Valoración del Sitio Web (0-10): 
-                    <input type="number" name="valoracion" min="0" max="10" required/>
-                </label>
+                <label for="valoracion">Valoración del Sitio Web (0-10):</label>
+                <input type="number" id="valoracion" name="valoracion" min="0" max="10" required/>
 
                 <input type="submit" name="terminar_prueba" value="Terminar Prueba"/>
             </form>
@@ -258,10 +237,8 @@
         <?php elseif ($_SESSION['estado_prueba'] == 'comentarios'): ?>
             <!-- Formulario para comentarios después de terminar la prueba -->
             <form method="post" autocomplete="off">
-                <label>
-                    Comentarios adicionales: 
-                    <textarea name="comentario" rows="5" cols="50" required></textarea>
-                </label>
+                <label for="comentario">Comentarios adicionales:</label>
+                <textarea id="comentario" name="comentario" rows="5" cols="50" required></textarea>
                 <input type="submit" name="guardar_comentarios" value="Guardar Comentarios"/>
             </form>
         <?php endif; ?>
