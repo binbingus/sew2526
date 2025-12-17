@@ -190,23 +190,48 @@
             <form method="post" autocomplete="off">
                 <label>Edad: <input type="number" name="edad" required/></label>
 
-                <label>Género:</label>
-                <p>
-                    <label>Femenino<input type="radio" name="genero" value="Femenino" required/></label>
-                    <label>Masculino<input type="radio" name="genero" value="Masculino" required/> </label>
-                    <label>Otro<input type="radio" name="genero" value="Otro" required/> </label>
-                </p>
+                <fieldset>
+                    <legend>Género</legend>
+
+                    <label>
+                        Femenino
+                        <input type="radio" name="genero" value="Femenino" required>
+                    </label>
+
+                    <label>
+                        Masculino
+                        <input type="radio" name="genero" value="Masculino">
+                    </label>
+
+                    <label>
+                        Otro
+                        <input type="radio" name="genero" value="Otro">
+                    </label>
+                </fieldset>
                 
 
                 <label>Profesión: <input type="text" name="profesion" required/></label>
                 
 
                 <label>Dispositivo:</label>
-                <p>
-                    <label>Ordenador<input type="radio" name="dispositivo" value="1" required/> </label>
-                    <label>Tablet<input type="radio" name="dispositivo" value="2" required/> </label>
-                    <label>Móvil<input type="radio" name="dispositivo" value="3" required/></label>
-                </p>
+                <fieldset>
+                    <legend>Dispositivo</legend>
+
+                    <label>
+                        Ordenador
+                        <input type="radio" name="dispositivo" value="1" required>
+                    </label>
+
+                    <label>
+                        Tablet
+                        <input type="radio" name="dispositivo" value="2">
+                    </label>
+
+                    <label>
+                        Móvil
+                        <input type="radio" name="dispositivo" value="3">
+                    </label>
+                </fieldset>
 
                 <input type="submit" name="iniciar_prueba" value="Iniciar Prueba"/>
             </form>
