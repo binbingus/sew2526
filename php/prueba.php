@@ -188,8 +188,7 @@
         <?php if ($_SESSION['estado_prueba'] == 'inicio'): ?>
             <!-- Formulario inicial para iniciar prueba -->
             <form method="post" autocomplete="off">
-                <label for="edad">Edad:</label>
-                <input type="number" name="edad" required/><br/>
+                <label>Edad: <input type="number" name="edad" required/></label>
 
                 <label>Género:</label>
                 <p>
@@ -199,8 +198,8 @@
                 </p>
                 
 
-                <label for="profesion">Profesión:</label>
-                <input type="text" name="profesion" required/><br/>
+                <label>Profesión: <input type="text" name="profesion" required/></label>
+                
 
                 <label>Dispositivo:</label>
                 <p>
@@ -219,8 +218,7 @@
                     <input type="text" name="pregunta<?= $index+1 ?>" required/><br/>
                 <?php endforeach; ?>
 
-                <label for="valoracion">Valoración del Sitio Web (0-10):</label>
-                <input type="number" name="valoracion" min="0" max="10" required/><br/>
+                <label>Valoración del Sitio Web (0-10): <input type="number" name="valoracion" min="0" max="10" required/></label>
 
                 <input type="submit" name="terminar_prueba" value="Terminar Prueba"/>
             </form>
@@ -228,8 +226,7 @@
         <?php elseif ($_SESSION['estado_prueba'] == 'comentarios'): ?>
             <!-- Formulario para comentarios después de terminar la prueba -->
             <form method="post" autocomplete="off">
-                <label for="comentario">Comentarios adicionales:</label><br/>
-                <textarea name="comentario" rows="5" cols="50" required></textarea><br/>
+                <label>Comentarios adicionales: <textarea name="comentario" rows="5" cols="50" required></textarea></label><br/>
                 <input type="submit" name="guardar_comentarios" value="Guardar Comentarios"/>
             </form>
         <?php endif; ?>
