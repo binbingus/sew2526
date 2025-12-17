@@ -188,7 +188,10 @@
         <?php if ($_SESSION['estado_prueba'] == 'inicio'): ?>
             <!-- Formulario inicial para iniciar prueba -->
             <form method="post" autocomplete="off">
-                <label>Edad: <input type="number" name="edad" required/></label>
+                <label>
+                    Edad: 
+                    <input type="number" name="edad" required/>
+                </label>
 
                 <fieldset>
                     <legend>Género</legend>
@@ -208,10 +211,11 @@
                         <input type="radio" name="genero" value="Otro">
                     </label>
                 </fieldset>
-                
 
-                <label>Profesión: <input type="text" name="profesion" required/></label>
-                
+                <label>
+                    Profesión: 
+                    <input type="text" name="profesion" required/>
+                </label>
 
                 <label>Dispositivo:</label>
                 <fieldset>
@@ -240,10 +244,13 @@
             <form method="post" autocomplete="off">
                 <?php foreach($preguntas as $index => $texto): ?>
                     <label for="pregunta<?= $index+1 ?>"><?= $texto ?></label>
-                    <input type="text" name="pregunta<?= $index+1 ?>" required/><br/>
+                    <input type="text" name="pregunta<?= $index+1 ?>" required/>
                 <?php endforeach; ?>
 
-                <label>Valoración del Sitio Web (0-10): <input type="number" name="valoracion" min="0" max="10" required/></label>
+                <label>
+                    Valoración del Sitio Web (0-10): 
+                    <input type="number" name="valoracion" min="0" max="10" required/>
+                </label>
 
                 <input type="submit" name="terminar_prueba" value="Terminar Prueba"/>
             </form>
@@ -251,7 +258,10 @@
         <?php elseif ($_SESSION['estado_prueba'] == 'comentarios'): ?>
             <!-- Formulario para comentarios después de terminar la prueba -->
             <form method="post" autocomplete="off">
-                <label>Comentarios adicionales: <textarea name="comentario" rows="5" cols="50" required></textarea></label><br/>
+                <label>
+                    Comentarios adicionales: 
+                    <textarea name="comentario" rows="5" cols="50" required></textarea>
+                </label>
                 <input type="submit" name="guardar_comentarios" value="Guardar Comentarios"/>
             </form>
         <?php endif; ?>
