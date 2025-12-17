@@ -15,7 +15,6 @@ main {
     margin: 0 8vmax;
 }
 
-/* HTML-CSS 3: ej5: Aplicar Flexbox al header y nav */
 /* E:001 */
 header {
     display: flex;
@@ -39,10 +38,12 @@ h2, h3, h4, h5, h6, p {
     margin: .5vmax;
 }
 
+/* E:001 */
 picture {
     display: block;
 }
 
+/* E:002 */
 picture img {
     display: block;
     margin-left: auto;
@@ -136,18 +137,19 @@ aside {
     margin: 1vmax 0;
 }
 
-/* FORM */
+/* E:001 */
 form {
     display: flex;
     flex-direction: column;
     margin: 2vmax auto;
     padding: 2vmax;
     max-width: 50vmax;
-    background-color: #f7f7f7;
+    background-color: #f7f7f7;  /* Hay un color de fondo establecido y no hay color de primer plano */
     border-radius: 1vmax;
     box-shadow: 0 0.25vmax 0.5vmax rgba(0,0,0,0.1);
 }
 
+/* E:012 */
 form input[type="text"],
 form input[type="number"] {
     display: block;
@@ -159,23 +161,27 @@ form input[type="number"] {
     border-radius: 0.5vmax;
 }
 
+/* E:002 */
 form p {
     display: grid;
-    grid-template-columns: 1fr auto; /* texto a la izquierda, radio a la derecha */
-    row-gap: 0.5vmax;                /* separación entre filas */
+    grid-template-columns: 1fr auto; 
+    row-gap: 0.5vmax;                
     margin: 0vmax 15vmax 2vmax 15vmax;
 }
 
+/* E:003 */
 form p label {
     display: contents;
 }
 
+/* E:014 */
 form p label input[type="radio"] {
     justify-self: start;  
     align-self: center; 
     margin-right: 20vmax;
 }
 
+/* E:012 */
 form input[type="submit"] {
     display: block;
     width: 100%;
@@ -189,8 +195,9 @@ form input[type="submit"] {
     transition: background-color 0.3s;
 }
 
+/* E:022 */
 form input[type="submit"]:hover {
-    background-color: #000099;
+    background-color: #000099;  /* Hay un color de fondo establecido y no hay color de primer plano */
 }
 
 /* E:002 */
@@ -205,13 +212,12 @@ main label input {
     margin-top: 0.3em;    
 }
 
-/* HTML-CSS 3: ej6: Adaptabilidad de contenidos */
 @media (min-width:320px) and (max-width:799px) {
     /* E:001 */
     header {
-        flex-direction: column;
-        position: relative;
-        padding: 0em 1em;
+        flex-direction: column; /* Redefinición de flex-direction */
+        position: relative;     
+        padding: 0em 1em;       /* Redefinición de padding-bottom, padding-left, padding-right, padding-top */
     }
 
     /* E:002 */
@@ -223,19 +229,19 @@ main label input {
         right: 0.5em;     
         background: none;
         border: none;
-        color: white;
+        color: white;   /* Hay un color de fondo establecido y no hay color de primer plano */
         cursor: pointer;
     }
 
     /* E:002 */
     header nav {
-        display: none;
-        flex-direction: column;
+        display: none;                /* Redefinición de display */
+        flex-direction: column;       /* Redefinición de flex-direction */
         position: relative;        
         top: 100%;                 
         left: 0;
         width: 100%;
-        background-color: black;
+        background-color: black;    /* Hay un color de fondo establecido y no hay color de primer plano */
         z-index: 999;
         margin: 0;
         padding: 0.5em 0;
@@ -248,7 +254,7 @@ main label input {
 
     /* E:013 */
     header nav a:hover {
-        background-color: #444;
+        background-color: #444; /* Hay un color de fondo establecido y no hay color de primer plano */
         text-decoration: none;
     }
 
@@ -278,8 +284,8 @@ main label input {
 
     /* E:001 */
     main {
-        margin: 0;
-        overflow: hidden;
+        margin: 0;          /* Redefinición de margin-bottom, margin-left, margin-right, margin-top */
+        overflow: hidden;   /* Redefinición de overflow-x */
     }
 
     /* E:002 */
@@ -317,10 +323,5 @@ main label input {
     ul, ol {
         overflow-x: hidden;
         max-width: 100%;  
-    }
-
-    /* E:002 */
-    ul a {
-        word-break: break-word;
     }
 }

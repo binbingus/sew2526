@@ -1,6 +1,8 @@
 /* Olga Alonso Grela UO288066 */
 /* Grid Layout para el juego de memoria */
 
+/* Redefinición de column-gap, Redefinición de row-gap */
+
 /* E: 001*/
 main {
     display: grid;
@@ -26,10 +28,10 @@ main p {
 @media (min-width:320px) and (max-width:799px) {
 
     main {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1vw;
-        margin: 0;
+        display: grid;                          /* Redefinición de display */
+        grid-template-columns: repeat(2, 1fr);  /* Redefinición de grid-template-columns */
+        gap: 1vw;                               /* Redefinición de gap */
+        margin: 0;                              /* Redefinición de margin-bottom, margin-left, margin-right, margin-top */
     }
 
     /* E:002 */
